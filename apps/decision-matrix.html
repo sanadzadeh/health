@@ -364,15 +364,15 @@ function radarPoint(i,val){ const a=(Math.PI*2*i/n)-Math.PI/2; return{x:cx+(val/
 [2,4,6,8,10].forEach(v=>{
   ctx.beginPath();
   for(let i=0;i<n;i++){ const p=axisPoint(i,(v/10)*R); i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y); }
-  ctx.closePath(); ctx.strokeStyle="rgba(255,255,255,0.06)"; ctx.lineWidth=1; ctx.stroke();
+  ctx.closePath(); ctx.strokeStyle="rgba(28,43,53,0.06)"; ctx.lineWidth=1; ctx.stroke();
 });
 for(let i=0;i<n;i++){
   const p=axisPoint(i,R);
   ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(p.x,p.y);
-  ctx.strokeStyle="rgba(255,255,255,0.08)"; ctx.lineWidth=1; ctx.stroke();
+  ctx.strokeStyle="rgba(28,43,53,0.08)"; ctx.lineWidth=1; ctx.stroke();
 }
 // Axis labels
-ctx.font="9px 'DM Mono',monospace"; ctx.fillStyle="rgba(245,242,237,0.35)"; ctx.textAlign="center"; ctx.textBaseline="middle";
+ctx.font="9px 'DM Mono',monospace"; ctx.fillStyle="rgba(28,43,53,0.35)"; ctx.textAlign="center"; ctx.textBaseline="middle";
 const SHORT = ["Patient","Data","Feasibility","Governance","Executive","Benefit"];
 CRITERIA.forEach((c,i)=>{ const p=axisPoint(i,R+18); ctx.fillText(SHORT[i],p.x,p.y); });
 
