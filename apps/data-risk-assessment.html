@@ -158,9 +158,6 @@ footer{border-top:1px solid var(--border);padding:1rem 2rem;display:flex;justify
   .page{padding:2rem 1rem 4rem}
   .kpi-grid,.domain-grid{grid-template-columns:1fr}
 }
-.landing-meta{display:flex;flex-wrap:wrap;gap:.35rem 1.6rem;padding:.7rem 2rem;border-bottom:1px solid var(--border);font-family:var(--font-mono,'DM Mono',monospace);font-size:.72rem;line-height:1.5}
-.landing-meta-label{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-right:.5rem}
-.landing-meta-text{color:var(--ink-2)}
 </style>
 </head>
 <body>
@@ -171,11 +168,6 @@ footer{border-top:1px solid var(--border);padding:1rem 2rem;display:flex;justify
   <div class="site-logo">Khaled Sanad: <em>Data Risk Assessment</em></div>
   <span class="status-badge">Health Data Platform · Asterion Health Analytics</span>
 </header>
-
-<div class="landing-meta">
-  <span><span class="landing-meta-label">Why this matters</span><span class="landing-meta-text">Ungoverned data quietly undermines every decision built on it, from identifier quality to access control to privacy exposure.</span></span>
-  <span><span class="landing-meta-label">Built with</span><span class="landing-meta-text">HTML, CSS, JavaScript, weighted risk-scoring methodology.</span></span>
-</div>
 
 <main class="page">
 
@@ -224,8 +216,8 @@ footer{border-top:1px solid var(--border);padding:1rem 2rem;display:flex;justify
       <div class="risk-row expandable">
         <div class="risk-main">
           <div class="risk-main-text">
-            <div class="risk-name">Supplier evidence quality failures</div>
-            <div class="risk-desc">Incorrect or missing attestations anchored permanently — no correction path once committed to the blockchain.</div>
+            <div class="risk-name">Patient identifier quality failures</div>
+            <div class="risk-desc">Duplicate and mismatched patient records break continuity of care and silently corrupt downstream activity reporting.</div>
           </div>
           <div class="risk-score red">94</div>
         </div>
@@ -234,17 +226,17 @@ footer{border-top:1px solid var(--border);padding:1rem 2rem;display:flex;justify
             <div class="rd-cell"><div class="rd-label">Likelihood</div><div class="rd-val">5 / 5</div></div>
             <div class="rd-cell"><div class="rd-label">Impact</div><div class="rd-val">5 / 5</div></div>
             <div class="rd-cell"><div class="rd-label">Control maturity</div><div class="rd-val rd-red">Low</div></div>
-            <div class="rd-cell"><div class="rd-label">Owner</div><div class="rd-val">Platform Engineering</div></div>
+            <div class="rd-cell"><div class="rd-label">Owner</div><div class="rd-val">Data Governance</div></div>
           </div>
-          <div class="rd-action">Pre-submission schema validation before blockchain anchoring. Cross-reference against mine identifier and certification registries. Pass rate below 88% triggers governance escalation.</div>
+          <div class="rd-action">Deterministic and probabilistic matching against the Master Patient Index before load. Manual review queue for match confidence below 90%. Data steward sign-off required.</div>
         </div>
       </div>
 
       <div class="risk-row expandable">
         <div class="risk-main">
           <div class="risk-main-text">
-            <div class="risk-name">Oracle and off-chain input integrity</div>
-            <div class="risk-desc">Inaccurate external data feeds — supplier APIs, customs systems, IoT sensors — become permanent immutable records.</div>
+            <div class="risk-name">Source system feed reliability</div>
+            <div class="risk-desc">Delayed or dropped feeds from PAS and EMR source systems create silent gaps in downstream clinical and activity reporting.</div>
           </div>
           <div class="risk-score amber">62</div>
         </div>
@@ -253,17 +245,17 @@ footer{border-top:1px solid var(--border);padding:1rem 2rem;display:flex;justify
             <div class="rd-cell"><div class="rd-label">Likelihood</div><div class="rd-val">4 / 5</div></div>
             <div class="rd-cell"><div class="rd-label">Impact</div><div class="rd-val">5 / 5</div></div>
             <div class="rd-cell"><div class="rd-label">Control maturity</div><div class="rd-val rd-red">Low</div></div>
-            <div class="rd-cell"><div class="rd-label">Owner</div><div class="rd-val">Platform Engineering</div></div>
+            <div class="rd-cell"><div class="rd-label">Owner</div><div class="rd-val">Digital Health Platform</div></div>
           </div>
-          <div class="rd-action">Anomaly detection on submission patterns. Source diversity required for mine-of-origin and ESG submissions. Oracle incident response playbook before EU go-live.</div>
+          <div class="rd-action">Automated feed-completeness monitoring with same-day alerting. Fallback reconciliation process for missed nightly loads before the FY26 reporting uplift.</div>
         </div>
       </div>
 
       <div class="risk-row expandable">
         <div class="risk-main">
           <div class="risk-main-text">
-            <div class="risk-name">Jurisdictional data residency conflicts</div>
-            <div class="risk-desc">AU, SG, EU, US, and ME impose conflicting obligations on where evidence records can be stored, transferred, and accessed.</div>
+            <div class="risk-name">Inconsistent reporting definitions across sites</div>
+            <div class="risk-desc">Sites define admitted/non-admitted activity, coding categories, and reporting periods differently, breaking network-wide comparisons.</div>
           </div>
           <div class="risk-score amber">58</div>
         </div>
@@ -272,17 +264,17 @@ footer{border-top:1px solid var(--border);padding:1rem 2rem;display:flex;justify
             <div class="rd-cell"><div class="rd-label">Likelihood</div><div class="rd-val">3 / 5</div></div>
             <div class="rd-cell"><div class="rd-label">Impact</div><div class="rd-val">5 / 5</div></div>
             <div class="rd-cell"><div class="rd-label">Control maturity</div><div class="rd-val rd-amber">Medium</div></div>
-            <div class="rd-cell"><div class="rd-label">Owner</div><div class="rd-val">Legal + CRO</div></div>
+            <div class="rd-cell"><div class="rd-label">Owner</div><div class="rd-val">Reporting &amp; Analytics</div></div>
           </div>
-          <div class="rd-action">Jurisdictional data architecture decision required before Phase 2. Legal review of SCCs, adequacy decisions, and binding corporate rules by Q3 FY26. Board-level approval required.</div>
+          <div class="rd-action">Single reporting glossary ratified by all sites required before Phase 2. Legacy local definitions retired on a fixed migration date. Executive sign-off required.</div>
         </div>
       </div>
 
       <div class="risk-row expandable">
         <div class="risk-main">
           <div class="risk-main-text">
-            <div class="risk-name">Blockchain immutability vs. right to erasure</div>
-            <div class="risk-desc">GDPR and equivalent regimes require deletion of personal data — directly conflicting with the platform's tamper-evident core guarantee.</div>
+            <div class="risk-name">Consent vs retention conflict</div>
+            <div class="risk-desc">Patient consent withdrawal and mandatory clinical retention periods pull in opposite directions for the same record.</div>
           </div>
           <div class="risk-score amber">78</div>
         </div>
@@ -291,9 +283,9 @@ footer{border-top:1px solid var(--border);padding:1rem 2rem;display:flex;justify
             <div class="rd-cell"><div class="rd-label">Likelihood</div><div class="rd-val">4 / 5</div></div>
             <div class="rd-cell"><div class="rd-label">Impact</div><div class="rd-val">4 / 5</div></div>
             <div class="rd-cell"><div class="rd-label">Control maturity</div><div class="rd-val rd-red">Low</div></div>
-            <div class="rd-cell"><div class="rd-label">Owner</div><div class="rd-val">Legal + Architecture</div></div>
+            <div class="rd-cell"><div class="rd-label">Owner</div><div class="rd-val">Privacy + Health Info Mgmt</div></div>
           </div>
-          <div class="rd-action">Off-chain personal data with on-chain hashes is the recommended architecture. Design authority review with legal sign-off required as pre-condition to EU go-live. Cannot be deferred.</div>
+          <div class="rd-action">Retained-but-access-restricted architecture is the recommended model. Privacy officer and health information manager sign-off required as a pre-condition to go-live. Cannot be deferred.</div>
         </div>
       </div>
 
@@ -302,18 +294,18 @@ footer{border-top:1px solid var(--border);padding:1rem 2rem;display:flex;justify
 
   <section class="domain-grid">
     <div class="domain-card">
-      <div class="domain-title">Evidence Integrity</div>
-      <p class="domain-copy">Supplier attestation quality, schema validation, and chain-of-custody completeness.</p>
+      <div class="domain-title">Patient Identifier Quality</div>
+      <p class="domain-copy">Master Patient Index matching, duplicate detection, and identifier resolution across source systems.</p>
       <div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--red)"></div></div>
     </div>
     <div class="domain-card">
-      <div class="domain-title">Oracle Dependency</div>
-      <p class="domain-copy">Reliability of external data feeds, APIs, IoT sensors, and certification registries.</p>
+      <div class="domain-title">Source System Reliability</div>
+      <p class="domain-copy">Reliability of PAS, EMR, and downstream feed integration into governed reporting.</p>
       <div class="bar-track"><div class="bar-fill" style="width:74%;background:var(--amber)"></div></div>
     </div>
     <div class="domain-card">
-      <div class="domain-title">Regulatory Compliance</div>
-      <p class="domain-copy">Residency obligations, erasure rights, and retention schedules across five jurisdictions.</p>
+      <div class="domain-title">Privacy &amp; Consent Compliance</div>
+      <p class="domain-copy">Consent capture, retention obligations, and access rights across every site.</p>
       <div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--amber)"></div></div>
     </div>
     <div class="domain-card">
@@ -322,13 +314,13 @@ footer{border-top:1px solid var(--border);padding:1rem 2rem;display:flex;justify
       <div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--amber)"></div></div>
     </div>
     <div class="domain-card">
-      <div class="domain-title">Third-Party Risk</div>
-      <p class="domain-copy">Data sharing, retention, and reconciliation risks from cloud providers and vendors.</p>
+      <div class="domain-title">Reporting Consistency</div>
+      <p class="domain-copy">Shared reporting definitions, retirement of manual spreadsheet reconciliation, and audit trail strength in executive reporting.</p>
       <div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--purple)"></div></div>
     </div>
     <div class="domain-card">
       <div class="domain-title">Remediation Confidence</div>
-      <p class="domain-copy">Most risks are addressable in 45 days. Architectural decisions are the binding constraint.</p>
+      <p class="domain-copy">Most risks are addressable in 45 days. Governance decisions are the binding constraint.</p>
       <div class="bar-track"><div class="bar-fill" style="width:62%;background:var(--green)"></div></div>
     </div>
   </section>
@@ -336,7 +328,7 @@ footer{border-top:1px solid var(--border);padding:1rem 2rem;display:flex;justify
   <section class="rec-box" id="recommendation">
     <div class="rec-eyebrow">Recommended Action</div>
     <p class="rec-text">
-      <strong>Evidence integrity, oracle controls, and data residency architecture are the 45-day priority.</strong> These risks combine high regulatory sensitivity with high operational dependency across all five platform regions. Immutability versus erasure must be resolved before EU go-live — it cannot be retrofitted.
+      <strong>Patient identifier quality, source system reliability, and consent-versus-retention architecture are the 45-day priority.</strong> These risks combine high regulatory sensitivity with high operational dependency across every site in the network. Consent versus retention must be resolved before the FY26 reporting uplift go-live — it cannot be retrofitted.
     </p>
   </section>
 
@@ -359,14 +351,14 @@ document.addEventListener("mousemove",e=>{ if(tt.classList.contains("show")) mov
 
 // ── Risk data ──
 const RISKS = [
-  {x:5,y:5,label:"Evidence quality",score:94,desc:"Incorrect attestations anchored permanently — no correction path.",color:"var(--red)",action:"Pre-submission schema validation before anchoring. Cross-reference against mine identifier and certification registries. Pass rate below 88% triggers governance escalation."},
-  {x:4,y:4,label:"Immutability vs erasure",score:78,desc:"GDPR erasure rights conflict with blockchain immutability.",color:"var(--red)",action:"Off-chain personal data with on-chain hashes. Design authority review with legal sign-off before EU go-live."},
-  {x:2,y:5,label:"Oracle integrity",score:62,desc:"Inaccurate external data feeds become permanent immutable records.",color:"var(--amber)",action:"Anomaly detection on submission patterns. Source diversity for high-value attestations. Oracle incident playbook before EU go-live."},
-  {x:3,y:3,label:"Data residency",score:58,desc:"Conflicting storage and transfer obligations across five jurisdictions.",color:"var(--amber)",action:"Jurisdictional architecture decision before Phase 2. Legal review of SCCs and adequacy decisions by Q3 FY26."},
-  {x:4,y:2,label:"Access governance",score:52,desc:"Role profiles allow broader access than operational workflows require.",color:"var(--amber)",action:"Role review against least-privilege within 30 days. High-risk query alerting. Segregate evidence validation from audit reporting."},
-  {x:2,y:3,label:"Evidence lineage",score:46,desc:"Transformation pathway from submission to anchored record not fully auditable.",color:"var(--green)",action:"End-to-end lineage documentation for all transformation stages. Any record traceable to raw submission within minutes."},
-  {x:5,y:1,label:"Vendor sharing",score:38,desc:"Cloud providers and integration partners introduce uncontrolled retention risks.",color:"var(--green)",action:"DPA review for all third-party vendors within 60 days. Minimum deletion requirements in all new and renewed contracts."},
-  {x:1,y:4,label:"Retention gaps",score:32,desc:"Retention schedules not consistently defined across five jurisdictions.",color:"var(--green)",action:"Unified retention schedule mapping record types to jurisdictional obligations by Q4 FY26."}
+  {x:5,y:5,label:"Patient identifier quality",score:94,desc:"Duplicate and mismatched patient records break continuity of care and corrupt downstream reporting.",color:"var(--red)",action:"Deterministic and probabilistic matching against the Master Patient Index before load. Manual review queue for match confidence below 90%. Data steward sign-off required."},
+  {x:4,y:4,label:"Consent vs retention conflict",score:78,desc:"Patient consent withdrawal and mandatory clinical retention periods pull in opposite directions for the same record.",color:"var(--red)",action:"Retained-but-access-restricted architecture. Privacy officer and health information manager sign-off before go-live."},
+  {x:2,y:5,label:"Source feed reliability",score:62,desc:"Delayed or dropped source system feeds create silent gaps in downstream reporting.",color:"var(--amber)",action:"Automated feed-completeness monitoring with same-day alerting. Reconciliation process for missed nightly loads before FY26 uplift."},
+  {x:3,y:3,label:"Reporting definition drift",score:58,desc:"Sites define activity and coding categories differently, breaking network-wide comparisons.",color:"var(--amber)",action:"Single reporting glossary ratified by all sites before Phase 2. Legacy local definitions retired on a fixed migration date."},
+  {x:4,y:2,label:"Access governance",score:52,desc:"Role profiles allow broader clinical record access than current workflows require.",color:"var(--amber)",action:"Role review against least-privilege within 30 days. High-risk query alerting. Segregate clinical access from reporting access."},
+  {x:2,y:3,label:"Incomplete clinical coding",score:46,desc:"Coding is finalised late or incompletely for a meaningful share of activity.",color:"var(--green)",action:"Coding completeness dashboard with a 5-business-day closure target. Escalation for coders exceeding backlog threshold."},
+  {x:5,y:1,label:"Manual spreadsheet dependency",score:38,desc:"Executive reporting still depends on manually reconciled spreadsheets outside the governed platform.",color:"var(--green)",action:"Retire manual reconciliation within 60 days. Minimum audit-trail requirement for any interim manual process."},
+  {x:1,y:4,label:"Unclear data ownership",score:32,desc:"Several core reporting datasets have no named owner accountable for quality or access decisions.",color:"var(--green)",action:"Assign a named data owner to every core dataset by Q4 FY26, mapped to the governance committee."}
 ];
 
 // ── Heatmap ──
@@ -402,24 +394,24 @@ for(let y=5;y>=1;y--){
 
 // ── Bullet chart data ──
 const DOMAINS = [
-  {label:"Evidence Integrity",exposure:88,control:42,target:80,color:"var(--red)",
-   risks:[{name:"Evidence quality",score:94},{name:"Evidence lineage",score:46}],
-   action:"Pre-submission schema validation. End-to-end lineage documentation within 60 days."},
-  {label:"Oracle Dependency",exposure:74,control:48,target:80,color:"var(--amber)",
-   risks:[{name:"Oracle integrity",score:62}],
-   action:"Anomaly detection immediately. Source diversity for Phase 2. Incident playbook before EU go-live."},
-  {label:"Regulatory Compliance",exposure:70,control:55,target:80,color:"var(--amber)",
-   risks:[{name:"Data residency",score:58},{name:"Immutability vs erasure",score:78},{name:"Retention gaps",score:32}],
-   action:"Erasure architecture decision first. Residency architecture second. Retention schedules by Q4 FY26."},
+  {label:"Patient Identifier Quality",exposure:88,control:42,target:80,color:"var(--red)",
+   risks:[{name:"Patient identifier quality",score:94},{name:"Incomplete clinical coding",score:46}],
+   action:"Deterministic matching against the Master Patient Index immediately. Coding completeness dashboard within 60 days."},
+  {label:"Source System Reliability",exposure:74,control:48,target:80,color:"var(--amber)",
+   risks:[{name:"Source feed reliability",score:62}],
+   action:"Feed-completeness monitoring immediately. Reconciliation process for Phase 2. Incident playbook before FY26 uplift."},
+  {label:"Privacy &amp; Consent Compliance",exposure:70,control:55,target:80,color:"var(--amber)",
+   risks:[{name:"Reporting definition drift",score:58},{name:"Consent vs retention conflict",score:78},{name:"Unclear data ownership",score:32}],
+   action:"Consent-versus-retention architecture decision first. Reporting glossary ratification second. Data ownership assignment by Q4 FY26."},
   {label:"Access Governance",exposure:65,control:60,target:80,color:"var(--amber)",
    risks:[{name:"Access governance",score:52}],
    action:"30-day role review. High-risk query alerting. Segregation of duties."},
-  {label:"Third-Party Risk",exposure:55,control:62,target:80,color:"var(--green)",
-   risks:[{name:"Vendor sharing",score:38}],
-   action:"DPA reviews in 60 days. Vendor risk assessment programme before Phase 2."},
+  {label:"Reporting Consistency",exposure:55,control:62,target:80,color:"var(--green)",
+   risks:[{name:"Manual spreadsheet dependency",score:38}],
+   action:"Retire manual reconciliation within 60 days. Site-by-site glossary migration programme before Phase 2."},
   {label:"Remediation Confidence",exposure:62,control:75,target:80,color:"var(--green)",
-   risks:[{name:"Retention gaps",score:32}],
-   action:"Schema validation, oracle detection, role review, and erasure decision achievable in 45 days."}
+   risks:[{name:"Unclear data ownership",score:32}],
+   action:"Identifier matching, feed monitoring, role review, and consent architecture decision achievable in 45 days."}
 ];
 
 const bulletList = document.getElementById("bullet-list");
