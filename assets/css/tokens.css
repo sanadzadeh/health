@@ -18,8 +18,8 @@
 
   --ink:          #1c2b35;
   --ink-rgb:      28,43,53;
-  --ink-2:        rgba(28,43,53,0.72);
-  --ink-3:        rgba(28,43,53,0.45);
+  --ink-2:        rgba(28,43,53,0.82);
+  --ink-3:        rgba(28,43,53,0.55);
 
   /* ── Status colours (shared meaning across every artefact) ───
      Hue/saturation unchanged from the dark theme — lightness only,
