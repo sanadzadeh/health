@@ -5,24 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Business Case Builder — Khaled Sanad</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
 <style>
   :root {
-    --bg:           #141414;
-    --surface:      #1c1c1c;
-    --surface-alt:  #222222;
-    --surface-hi:   #262626;
-    --border:       rgba(255,255,255,0.07);
-    --border-soft:  rgba(255,255,255,0.04);
-    --ink:          #f5f2ed;
-    --ink-2:        rgba(245,242,237,0.65);
-    --ink-3:        rgba(245,242,237,0.35);
-    --accent:       #c9b88a;
-    --accent-dim:   rgba(201,184,138,0.09);
-    --accent-mid:   rgba(201,184,138,0.2);
-    --font-serif:   'Cormorant Garamond', Georgia, serif;
-    --font-mono:    'DM Mono', 'Courier New', monospace;
-    --radius:       4px;
-    --tr:           160ms ease;
+    --accent:     var(--accent-bizcase);
+    --accent-rgb: var(--accent-bizcase-rgb);
+    --accent-dim: rgba(var(--accent-bizcase-rgb), var(--accent-dim-opacity));
+    --accent-mid: rgba(var(--accent-bizcase-rgb), var(--accent-mid-opacity));
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { font-size: 16px; scroll-behavior: smooth; }
