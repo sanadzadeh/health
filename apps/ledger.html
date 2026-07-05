@@ -5,46 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ledger — Health Data Glossary</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
 <style>
   :root {
-    --bg: #141414;
-    --surface: #1a1a1a;
-    --surface-alt: #1f1f1f;
-    --border: rgba(255,255,255,0.07);
-    --border-soft: rgba(255,255,255,0.04);
-    --ink: #f0eeea;
-    --ink-2: rgba(240,238,234,0.75);
-    --ink-3: rgba(240,238,234,0.5);
-    --accent: #4a9e9e;
-    --accent-hover: #5ab4b4;
-    --accent-light: rgba(74,158,158,0.1);
-    --accent-mid: rgba(74,158,158,0.25);
-    --tag-bg: rgba(255,255,255,0.05);
-    --tag-ink: rgba(240,238,234,0.45);
+    /* Ledger previously shared #4a9e9e with Initiative Tracker — now
+       sourced from tokens.css's distinct --accent-ledger indigo. */
+    --accent: var(--accent-ledger);
+    --accent-hover: var(--accent-ledger-hover);
+    --accent-light: rgba(var(--accent-ledger-rgb), 0.1);
+    --accent-mid: rgba(var(--accent-ledger-rgb), var(--accent-mid-opacity));
+    --tag-bg: rgba(var(--border-rgb), 0.05);
+    --tag-ink: rgba(var(--ink-rgb), 0.45);
     --card-shadow: 0 1px 3px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.2);
     --card-shadow-hover: 0 4px 12px rgba(0,0,0,.4), 0 12px 40px rgba(0,0,0,.3);
-    --radius: 4px;
-    --radius-sm: 3px;
-    --font-serif: 'Cormorant Garamond', 'Georgia', serif;
-    --font-mono: 'DM Mono', 'Courier New', monospace;
-    --tr: 160ms ease;
   }
 
   html.light {
-    --bg: #f0efea;
-    --surface: #faf9f7;
-    --surface-alt: #eceae4;
-    --border: rgba(28,43,53,0.1);
-    --border-soft: rgba(28,43,53,0.06);
-    --ink: #1c2b35;
-    --ink-2: rgba(28,43,53,0.7);
-    --ink-3: rgba(28,43,53,0.4);
-    --accent: #4a7c7e;
-    --accent-hover: #3a6466;
-    --accent-light: rgba(74,124,126,0.08);
-    --accent-mid: rgba(74,124,126,0.2);
-    --tag-bg: rgba(28,43,53,0.06);
-    --tag-ink: rgba(28,43,53,0.55);
+    --bg: var(--ledger-light-bg);
+    --surface: var(--ledger-light-surface);
+    --surface-alt: var(--ledger-light-surface-alt);
+    --border: var(--ledger-light-border);
+    --border-soft: var(--ledger-light-border-soft);
+    --ink: var(--ledger-light-ink);
+    --ink-2: var(--ledger-light-ink-2);
+    --ink-3: var(--ledger-light-ink-3);
+    --accent: var(--accent-ledger-light);
+    --accent-hover: var(--accent-ledger-light-hover);
+    --accent-light: rgba(var(--accent-ledger-light-rgb), 0.08);
+    --accent-mid: rgba(var(--accent-ledger-light-rgb), 0.2);
+    --tag-bg: rgba(var(--ledger-light-border-rgb), 0.06);
+    --tag-ink: rgba(var(--ledger-light-ink-rgb), 0.55);
     --card-shadow: 0 1px 3px rgba(28,43,53,.06), 0 4px 16px rgba(28,43,53,.04);
     --card-shadow-hover: 0 4px 12px rgba(28,43,53,.1), 0 12px 40px rgba(28,43,53,.07);
   }
@@ -177,7 +167,7 @@
     white-space: nowrap;
   }
   .filter-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
-  .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .filter-btn.active { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 
   .library-section { padding: 28px 0 80px; }
   .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -222,8 +212,8 @@
     letter-spacing: -.01em;
   }
   .article-card.featured .card-title { font-size: 1.4rem; }
-  .card-summary { font-size: .86rem; color: rgba(240,238,234,0.55); line-height: 1.65; flex: 1; }
-  html.light .card-summary { color: rgba(28,43,53,0.58); }
+  .card-summary { font-size: .86rem; color: rgba(var(--ink-rgb),0.55); line-height: 1.65; flex: 1; }
+  html.light .card-summary { color: rgba(var(--ledger-light-ink-rgb),0.58); }
   .card-stack {
     font-size: .75rem;
     color: var(--ink-3);
