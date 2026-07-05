@@ -138,7 +138,7 @@ body{
   top:-16px;
   left:50%;
   transform:translateX(-50%);
-  font-size:.58rem;
+  font-size:.72rem;
   font-weight:500;
   color:var(--ink-3);
   white-space:nowrap;
@@ -177,12 +177,12 @@ footer{
 }
 
 .as-of{
-  font-size:.58rem;
+  font-size:.72rem;
   color:var(--ink-3);
 }
 
 .prog-badge{
-  font-size:.56rem;
+  font-size:.72rem;
   color:var(--accent);
   border:1px solid var(--accent-mid);
   background:var(--accent-dim);
@@ -254,7 +254,7 @@ footer{
   display:inline-flex;
   align-items:center;
   gap:5px;
-  font-size:.64rem;
+  font-size:.74rem;
   font-weight:500;
   letter-spacing:.02em;
   text-transform:uppercase;
@@ -307,7 +307,7 @@ footer{
 }
 
 .kpi-label{
-  font-size:.68rem;
+  font-size:.74rem;
   color:var(--ink-3);
   margin-bottom:.4rem;
 }
@@ -441,7 +441,7 @@ footer{
 
 
 .gauge-note{
-  font-size:.55rem;
+  font-size:.72rem;
   color:var(--ink-3);
   margin-top:.28rem;
 }
@@ -457,7 +457,7 @@ footer{
   display:flex;
   justify-content:space-between;
   gap:.6rem;
-  font-size:.52rem;
+  font-size:.7rem;
   color:var(--ink-3);
 }
 
@@ -580,7 +580,7 @@ footer{
   grid-template-columns:205px repeat(12,1fr) 52px;
   gap:.85rem;
   margin-bottom:.65rem;
-  font-size:.52rem;
+  font-size:.7rem;
   font-weight:400;
   letter-spacing:.075em;
   color:var(--ink-3);
@@ -1000,7 +1000,7 @@ footer{
   top:-16px;
   left:50%;
   transform:translateX(-50%);
-  font-size:.58rem;
+  font-size:.72rem;
   font-weight:500;
   color:var(--ink-3);
   white-space:nowrap;
@@ -1027,7 +1027,7 @@ footer{
   display:flex;
   justify-content:space-between;
   gap:1rem;
-  font-size:.58rem;
+  font-size:.72rem;
   color:var(--ink-3);
 }
 
@@ -1144,7 +1144,7 @@ footer{
   top:-16px;
   left:50%;
   transform:translateX(-50%);
-  font-size:.58rem;
+  font-size:.72rem;
   font-weight:500;
   color:var(--ink-3);
   white-space:nowrap;
@@ -1169,6 +1169,9 @@ footer{
     flex-direction:column;
   }
 }
+.landing-meta{display:flex;flex-wrap:wrap;gap:.35rem 1.6rem;padding:.7rem 2rem;border-bottom:1px solid var(--border);font-family:var(--font-mono,'DM Mono',monospace);font-size:.72rem;line-height:1.5}
+.landing-meta-label{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-right:.5rem}
+.landing-meta-text{color:var(--ink-2)}
 </style>
 </head>
 
@@ -1181,6 +1184,11 @@ footer{
     <span class="prog-badge">Asterion Health Analytics Programme</span>
   </div>
 </header>
+
+<div class="landing-meta">
+  <span><span class="landing-meta-label">Why this matters</span><span class="landing-meta-text">Transformation programmes fail quietly when readiness, adoption risk and budget pressure go unmeasured until it's too late to course-correct.</span></span>
+  <span><span class="landing-meta-label">Built with</span><span class="landing-meta-text">HTML, CSS, JavaScript, Canvas-based gauge and timeline rendering, governance scoring logic.</span></span>
+</div>
 
 <div class="folder-nav">
   <button class="folder-tab active" data-tab="overview">Overview</button>
@@ -1758,7 +1766,7 @@ WORKSTREAMS.flatMap(ws => ws.milestones.filter(m => !m.done)).slice(0,7).forEach
   el.innerHTML = `
     <div style="flex:1;color:var(--ink-2);">${m.name}</div>
     <div style="font-weight:400;color:var(--ink-3);white-space:nowrap;font-size:.7rem;">${m.date}</div>
-    ${m.critical ? `<span style="font-weight:400;color:var(--red);font-size:.66rem;letter-spacing:.01em;text-transform:none;white-space:nowrap;">Gate</span>` : ""}
+    ${m.critical ? `<span style="font-weight:400;color:var(--red);font-size:.74rem;letter-spacing:.01em;text-transform:none;white-space:nowrap;">Gate</span>` : ""}
   `;
   ovMs.appendChild(el);
 });
@@ -1896,7 +1904,7 @@ BURN_BY_MONTH.forEach((b,i) => {
   burnChart.appendChild(bar);
 
   const label = document.createElement("div");
-  label.style.cssText = "flex:1;text-align:center;font-size:.55rem;color:var(--ink-3);font-weight:400;letter-spacing:.06em;margin-top:4px;";
+  label.style.cssText = "flex:1;text-align:center;font-size:.72rem;color:var(--ink-3);font-weight:400;letter-spacing:.06em;margin-top:4px;";
   label.textContent = MONTHS[i].slice(0,1);
   burnLabels.appendChild(label);
 });
@@ -1924,7 +1932,7 @@ GATE_CHECKLIST.forEach(item => {
   el.innerHTML = `
     <div style="width:16px;height:16px;border-radius:50%;border:1.5px solid ${item.done ? "var(--green)" : item.critical ? "var(--red)" : "var(--border)"};background:${item.done ? "var(--green-dim)" : "transparent"};flex-shrink:0;"></div>
     <div style="flex:1;color:${item.done ? "var(--ink-3)" : "var(--ink-2)"};">${item.item}</div>
-    ${item.critical && !item.done ? `<span style="font-size:.68rem;color:var(--red);font-weight:500;letter-spacing:.01em;text-transform:none;">Gate</span>` : ""}
+    ${item.critical && !item.done ? `<span style="font-size:.74rem;color:var(--red);font-weight:500;letter-spacing:.01em;text-transform:none;">Gate</span>` : ""}
     ${item.done ? `<span class="chip complete">Done</span>` : `<span class="chip not-started">Pending</span>`}
   `;
   gateChecklist.appendChild(el);
