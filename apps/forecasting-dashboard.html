@@ -1199,13 +1199,13 @@ function drawChart(data){
   function yLine(v){ return pad.top + ph - (v/100)*ph }
 
   // Grid
-  ctx.strokeStyle = "rgba(255,255,255,0.05)";
+  ctx.strokeStyle = "rgba(28,43,53,0.05)";
   ctx.lineWidth = 1;
   for(let i=0;i<=4;i++){
     const y = pad.top + (ph/4)*i;
     ctx.beginPath(); ctx.moveTo(pad.left,y); ctx.lineTo(w-pad.right,y); ctx.stroke();
     const val = Math.round(maxBar-(maxBar/4)*i);
-    ctx.fillStyle = "rgba(245,242,237,0.28)";
+    ctx.fillStyle = "rgba(28,43,53,0.28)";
     ctx.font = "10px 'DM Mono'";
     ctx.textAlign = "right";
     ctx.fillText(val, pad.left-6, y+3);
@@ -1231,7 +1231,7 @@ function drawChart(data){
       ctx.fillStyle = s.color;
       ctx.fillRect(x,y,bw,bh);
     });
-    ctx.fillStyle = "rgba(245,242,237,0.32)";
+    ctx.fillStyle = "rgba(28,43,53,0.32)";
     ctx.textAlign = "center";
     ctx.font = "9px 'DM Mono'";
     ctx.fillText(lbl, cx, h-10);
@@ -1257,11 +1257,11 @@ function drawChart(data){
     });
   }
 
-  drawLine(data.coverage, "rgba(245,242,237,0.85)");
+  drawLine(data.coverage, "rgba(28,43,53,0.85)");
   drawLine(data.pressure, "rgba(196,154,85,0.85)", true);
 
   // Right axis label
-  ctx.fillStyle = "rgba(245,242,237,0.28)";
+  ctx.fillStyle = "rgba(28,43,53,0.28)";
   ctx.textAlign = "right";
   ctx.font = "9px 'DM Mono'";
   ctx.fillText("Line scale: 0-100%", w-pad.right, 14);

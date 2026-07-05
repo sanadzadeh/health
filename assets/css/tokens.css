@@ -1,49 +1,53 @@
 /* Shared design tokens — Khaled Sanad Portfolio
    Single source of truth for every HTML file's colour system.
+   Clinical light theme — dark theme retired (was the suite default
+   through Phase 1; see git history for those values).
    Each page keeps a thin :root block that aliases these into the
    generic --accent / --ink / --bg names its own CSS already uses. */
 
 :root {
   /* ── Neutrals ─────────────────────────────────────────────── */
-  --bg:           #141414;
-  --bg-rgb:       20,20,20;
-  --surface:      #1c1c1c;
-  --surface-alt:  #222222;
-  --surface-hi:   #282828;
-  --border:       rgba(255,255,255,0.07);
-  --border-soft:  rgba(255,255,255,0.04);
-  --border-rgb:   255,255,255;
+  --bg:           #f0efea;
+  --bg-rgb:       240,239,234;
+  --surface:      #faf9f7;
+  --surface-alt:  #eceae4;
+  --surface-hi:   #e5e1d6;
+  --border:       rgba(28,43,53,0.1);
+  --border-soft:  rgba(28,43,53,0.06);
+  --border-rgb:   28,43,53;
 
-  --ink:          #f5f2ed;
-  --ink-rgb:      245,242,237;
-  --ink-2:        rgba(245,242,237,0.6);
-  --ink-3:        rgba(245,242,237,0.3);
+  --ink:          #1c2b35;
+  --ink-rgb:      28,43,53;
+  --ink-2:        rgba(28,43,53,0.72);
+  --ink-3:        rgba(28,43,53,0.45);
 
-  /* ── Status colours (shared meaning across every artefact) ─── */
-  --green:        #5f9a78;
-  --green-rgb:    95,154,120;
-  --green-dim:    rgba(95,154,120,0.13);
-  --green-mid:    rgba(95,154,120,0.25);
+  /* ── Status colours (shared meaning across every artefact) ───
+     Hue/saturation unchanged from the dark theme — lightness only,
+     reduced just enough to clear 4.5:1 text contrast against --bg. */
+  --green:        #49765c;
+  --green-rgb:    73,118,92;
+  --green-dim:    rgba(73,118,92,0.13);
+  --green-mid:    rgba(73,118,92,0.25);
 
-  --amber:        #c49a55;
-  --amber-rgb:    196,154,85;
-  --amber-dim:    rgba(196,154,85,0.13);
-  --amber-mid:    rgba(196,154,85,0.25);
+  --amber:        #896730;
+  --amber-rgb:    137,103,48;
+  --amber-dim:    rgba(137,103,48,0.13);
+  --amber-mid:    rgba(137,103,48,0.25);
 
-  --red:          #b4685d;
-  --red-rgb:      180,104,93;
-  --red-dim:      rgba(180,104,93,0.13);
-  --red-mid:      rgba(180,104,93,0.25);
+  --red:          #a4574c;
+  --red-rgb:      164,87,76;
+  --red-dim:      rgba(164,87,76,0.13);
+  --red-mid:      rgba(164,87,76,0.25);
 
-  --blue:         #6b8fa8;
-  --blue-rgb:     107,143,168;
-  --blue-dim:     rgba(107,143,168,0.13);
-  --blue-mid:     rgba(107,143,168,0.25);
+  --blue:         #507188;
+  --blue-rgb:     80,113,136;
+  --blue-dim:     rgba(80,113,136,0.13);
+  --blue-mid:     rgba(80,113,136,0.25);
 
-  --purple:       #8f7cae;
-  --purple-rgb:   143,124,174;
-  --purple-dim:   rgba(143,124,174,0.13);
-  --purple-mid:   rgba(143,124,174,0.25);
+  --purple:       #79629e;
+  --purple-rgb:   121,98,158;
+  --purple-dim:   rgba(121,98,158,0.13);
+  --purple-mid:   rgba(121,98,158,0.25);
 
   /* ── Typography ───────────────────────────────────────────── */
   --font-serif:   'Cormorant Garamond', Georgia, serif;
@@ -54,62 +58,51 @@
   --radius-sm:    3px;
   --tr:           160ms ease;
 
-  /* ── Per-page accents ─────────────────────────────────────── */
-  --accent-index:            #c9a96e;
-  --accent-index-rgb:        201,169,110;
+  /* ── Per-page accents ───────────────────────────────────────
+     Same hue/saturation as the retired dark theme, lightness reduced
+     to clear 4.5:1 text contrast against the new light --bg. */
+  --accent-index:            #866832;
+  --accent-index-rgb:        134,104,50;
   --accent-cv:               var(--accent-index);
   --accent-cv-rgb:           var(--accent-index-rgb);
 
-  --accent-forecasting:      #6b8fa8;
-  --accent-forecasting-rgb:  107,143,168;
+  --accent-forecasting:      #507188;
+  --accent-forecasting-rgb:  80,113,136;
 
-  --accent-deployment:       #93a9b2;
-  --accent-deployment-rgb:   145,166,174;
+  --accent-deployment:       #58717b;
+  --accent-deployment-rgb:   88,113,123;
 
-  --accent-decision:         #8b7ab0;
-  --accent-decision-rgb:     139,122,176;
+  --accent-decision:         #7662a2;
+  --accent-decision-rgb:     118,98,162;
 
-  --accent-risk:             #b06050;
-  --accent-risk-rgb:         176,96,80;
+  --accent-risk:             #a35849;
+  --accent-risk-rgb:         163,88,73;
 
-  --accent-initiative:       #4a9e9e;
-  --accent-initiative-rgb:   74,158,158;
+  --accent-initiative:       #387777;
+  --accent-initiative-rgb:   56,119,119;
 
-  --accent-stakeholder:      #b99562;
-  --accent-stakeholder-rgb:  185,149,98;
+  --accent-stakeholder:      #86683c;
+  --accent-stakeholder-rgb:  134,104,60;
 
-  --accent-bizcase:          #c9b88a;
-  --accent-bizcase-rgb:      201,184,138;
+  --accent-bizcase:          #7d6b3a;
+  --accent-bizcase-rgb:      125,107,58;
 
   /* Ledger previously shared #4a9e9e with Initiative Tracker — reassigned
-     to a distinct muted indigo so the two are no longer identical. */
-  --accent-ledger:           #6f7fb8;
-  --accent-ledger-rgb:       111,127,184;
-  --accent-ledger-hover:     #8b98d0;
+     to a distinct muted indigo (also no longer collides post-recolor). */
+  --accent-ledger:           #4f5f96;
+  --accent-ledger-rgb:       79,95,150;
+  --accent-ledger-hover:     #3d4a7a;
 
-  /* Standard dim/mid tint opacities applied uniformly across every accent. */
+  /* Standard dim/mid tint opacities applied uniformly across every accent.
+     Verified numerically against the new light bg: at these opacities the
+     (now-darkened) accents produce comparable or greater tint visibility
+     than the original accents had against the old dark bg — no separate
+     light-specific opacity needed. */
   --accent-dim-opacity: 0.12;
   --accent-mid-opacity: 0.25;
 
   /* Theme-invariant text colour for use on top of a saturated accent fill
-     (e.g. an active pill/button) — deliberately does NOT flip with
-     light/dark theme, since the accent fill itself stays legible either way. */
+     (e.g. an active pill/button) — white reads correctly on every current
+     accent regardless of background theme. */
   --on-accent: #fff;
-
-  /* ── Ledger's light theme (the only artefact with one) ───────
-     Kept separate from the -dim/-mid "faint tint" naming above to
-     avoid confusion with Ledger's own --accent-light (faint-tint) role. */
-  --ledger-light-bg:            #f0efea;
-  --ledger-light-surface:       #faf9f7;
-  --ledger-light-surface-alt:   #eceae4;
-  --ledger-light-border:        rgba(28,43,53,0.1);
-  --ledger-light-border-soft:   rgba(28,43,53,0.06);
-  --ledger-light-border-rgb:    28,43,53;
-  --ledger-light-ink:           #1c2b35;
-  --ledger-light-ink-rgb:       28,43,53;
-  --ledger-light-ink-2:         rgba(28,43,53,0.7);
-  --ledger-light-ink-3:         rgba(28,43,53,0.4);
-  --accent-ledger-light:        #4f5f96;
-  --accent-ledger-light-rgb:    79,95,150;
-  --accent-ledger-light-hover:  #3d4a7a;
 }
