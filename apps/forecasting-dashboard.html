@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forecasting Dashboard — Asterion Grid</title>
+<title>Patient Flow Forecasting Dashboard — Asterion Health Analytics</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -721,8 +721,8 @@ input[type=range]::-moz-range-thumb{
 
 <header class="site-header">
   <div class="header-inner">
-    <div class="site-logo">Khaled Sanad: <strong>Forecasting Interactive Dashboard</strong></div>
-    <span class="status-badge">Critical Minerals Expansion · FY26–FY28</span>
+    <div class="site-logo">Khaled Sanad: <strong>Patient Flow Forecasting Dashboard</strong></div>
+    <span class="status-badge">Health Service Intelligence Uplift · FY26-FY28</span>
   </div>
 </header>
 
@@ -731,10 +731,10 @@ input[type=range]::-moz-range-thumb{
 
   <div class="scenario-tabs-bar">
     <div class="scenario-tabs">
-      <button class="scenario-tab active" data-scenario="base">Base Case</button>
-      <button class="scenario-tab" data-scenario="acc">Accelerated Compliance</button>
-      <button class="scenario-tab" data-scenario="del">Regulatory Delay</button>
-      <button class="scenario-tab" data-scenario="res">Black Swan</button>
+      <button class="scenario-tab active" data-scenario="base">Base Demand</button>
+      <button class="scenario-tab" data-scenario="acc">Winter Surge</button>
+      <button class="scenario-tab" data-scenario="del">Workforce Constraint</button>
+      <button class="scenario-tab" data-scenario="res">System Shock</button>
     </div>
     <div class="tab-content-border"></div>
   </div>
@@ -745,30 +745,30 @@ input[type=range]::-moz-range-thumb{
       <!-- Hero -->
       <div class="hero-grid" style="margin-top:1.5rem">
         <div class="hero-panel">
-          <h1 class="hero-title" id="hero-title">Critical Minerals Traceability Forecast</h1>
+          <h1 class="hero-title" id="hero-title">Patient Flow and Capacity Forecast</h1>
           <p class="hero-text" id="hero-text">
-            Planning environment for supplier adoption, coverage, and risk trajectory across five regions. <strong style="color:var(--ink);font-weight:400">Adjust assumptions to model alternatives;</strong> the interpretation panel updates in real time.
+            Planning environment for emergency demand, inpatient capacity, discharge pressure, and operational risk across a multi-site health service. <strong style="color:var(--ink);font-weight:400">Adjust assumptions to model alternatives;</strong> the interpretation panel updates in real time.
           </p>
           <a class="jump-btn hero-jump" href="#interpretation" style="margin-top:1.1rem;display:inline-block">Executive Interpretation ↓</a>
         </div>
         <div class="kpi-strip-inner" style="background:var(--border);gap:1px">
             <div class="kpi">
-              <div class="kpi-label">Projected Supplier Coverage</div>
+              <div class="kpi-label">Capacity Visibility</div>
               <div class="kpi-value accent" id="kpi-coverage">74%</div>
-              <div class="kpi-sub" id="kpi-coverage-sub">By Q3 FY27 — priority regions</div>
+              <div class="kpi-sub" id="kpi-coverage-sub">By Q3 FY27 - priority services</div>
             </div>
             <div class="kpi">
-              <div class="kpi-label">Compliance Confidence</div>
+              <div class="kpi-label">Flow Confidence</div>
               <div class="kpi-value green" id="kpi-confidence">81</div>
               <div class="kpi-sub" id="kpi-confidence-sub">Score out of 100</div>
             </div>
             <div class="kpi">
-              <div class="kpi-label">Est. Annual Savings</div>
+              <div class="kpi-label">Est. Capacity Benefit</div>
               <div class="kpi-value amber" id="kpi-savings">$4.2M</div>
-              <div class="kpi-sub" id="kpi-savings-sub">Audit labour and dispute resolution</div>
+              <div class="kpi-sub" id="kpi-savings-sub">Avoided escalation and manual coordination</div>
             </div>
             <div class="kpi">
-              <div class="kpi-label">Implementation Risk</div>
+              <div class="kpi-label">Operational Risk</div>
               <div class="kpi-value accent" id="kpi-risk">Medium</div>
               <div class="kpi-sub" id="kpi-risk-sub">Controlled with mitigation plan</div>
             </div>
@@ -784,42 +784,42 @@ input[type=range]::-moz-range-thumb{
         <div class="assumptions-grid">
           <div class="assumption-row">
             <div class="assumption-label">
-              <span class="assumption-name">Supplier onboarding rate</span>
+              <span class="assumption-name">ED arrival growth</span>
               <span class="assumption-val" id="val-onboard">18 /mo</span>
             </div>
             <input type="range" id="sl-onboard" min="6" max="36" value="18" step="2">
           </div>
           <div class="assumption-row">
             <div class="assumption-label">
-              <span class="assumption-name">Regulatory friction index</span>
+              <span class="assumption-name">Admission pressure index</span>
               <span class="assumption-val" id="val-friction">5 / 10</span>
             </div>
             <input type="range" id="sl-friction" min="1" max="10" value="5" step="1">
           </div>
           <div class="assumption-row">
             <div class="assumption-label">
-              <span class="assumption-name">Evidence failure rate</span>
+              <span class="assumption-name">Discharge delay rate</span>
               <span class="assumption-val" id="val-failure">12%</span>
             </div>
             <input type="range" id="sl-failure" min="2" max="40" value="12" step="2">
           </div>
           <div class="assumption-row">
             <div class="assumption-label">
-              <span class="assumption-name">Platform adoption curve</span>
+              <span class="assumption-name">Average LOS shift</span>
               <span class="assumption-val" id="val-adoption">9 mo</span>
             </div>
             <input type="range" id="sl-adoption" min="3" max="24" value="9" step="3">
           </div>
           <div class="assumption-row">
             <div class="assumption-label">
-              <span class="assumption-name">Implementation cost variance</span>
+              <span class="assumption-name">Workforce capacity variance</span>
               <span class="assumption-val" id="val-cost">+8%</span>
             </div>
             <input type="range" id="sl-cost" min="-20" max="40" value="8" step="4">
           </div>
           <div class="assumption-row">
             <div class="assumption-label">
-              <span class="assumption-name">Audit exception rate</span>
+              <span class="assumption-name">Readmission pressure</span>
               <span class="assumption-val" id="val-audit">9%</span>
             </div>
             <input type="range" id="sl-audit" min="2" max="30" value="9" step="1">
@@ -830,57 +830,57 @@ input[type=range]::-moz-range-thumb{
       <!-- Charts -->
       <div class="visual-grid">
         <div class="visual-card">
-          <div class="section-title">Supplier Coverage &amp; Compliance Trajectory</div>
+          <div class="section-title">Demand, Flow and Capacity Trajectory</div>
           <div class="composite-chart-wrap">
             <canvas id="composite-chart"></canvas>
           </div>
           <div class="chart-legend">
-            <span class="legend-item"><span class="legend-swatch" style="background:var(--accent)"></span>Suppliers onboarded</span>
-            <span class="legend-item"><span class="legend-swatch" style="background:var(--green)"></span>Evidence validated</span>
-            <span class="legend-item"><span class="legend-swatch" style="background:var(--red)"></span>Exception backlog</span>
-            <span class="legend-item"><span class="legend-line" style="background:var(--ink)"></span>Coverage %</span>
-            <span class="legend-item"><span class="legend-line" style="background:var(--amber)"></span>Compliance pressure</span>
+            <span class="legend-item"><span class="legend-swatch" style="background:var(--accent)"></span>ED arrivals</span>
+            <span class="legend-item"><span class="legend-swatch" style="background:var(--green)"></span>Patients discharged</span>
+            <span class="legend-item"><span class="legend-swatch" style="background:var(--red)"></span>Delayed transfers</span>
+            <span class="legend-item"><span class="legend-line" style="background:var(--ink)"></span>Capacity visibility %</span>
+            <span class="legend-item"><span class="legend-line" style="background:var(--amber)"></span>Flow pressure</span>
           </div>
           <div class="driver-grid">
             <div class="driver-cell">
               <div class="driver-label">Chart signal</div>
-              <div class="driver-value" id="chart-signal">Steady ramp</div>
+              <div class="driver-value" id="chart-signal">Steady demand</div>
             </div>
             <div class="driver-cell">
               <div class="driver-label">Key constraint</div>
-              <div class="driver-value" id="chart-constraint">EU regulatory lag</div>
+              <div class="driver-value" id="chart-constraint">Discharge delay</div>
             </div>
           </div>
         </div>
 
         <div class="visual-card">
-          <div class="section-title">Platform Flow — Supplier to Verified Record</div>
+          <div class="section-title">Patient Flow - Arrival to Discharge</div>
           <div class="flow-outer">
             <div class="flow-nodes">
               <div class="flow-node">
-                <div class="node-label">Supplier Pool</div>
+                <div class="node-label">Presentation Pool</div>
                 <div class="node-value">100</div>
                 <div class="node-sub">Indexed base</div>
               </div>
               <div class="flow-node">
-                <div class="node-label">Onboarded</div>
+                <div class="node-label">Admitted</div>
                 <div class="node-value" id="fn-onboarded">74</div>
-                <div class="node-sub">Platform registered</div>
+                <div class="node-sub">Inpatient pathway</div>
               </div>
               <div class="flow-node">
-                <div class="node-label">Evidence Gap</div>
+                <div class="node-label">Not Admitted</div>
                 <div class="node-value" id="fn-evgap">26</div>
-                <div class="node-sub">Pending attestation</div>
+                <div class="node-sub">Discharged or redirected</div>
               </div>
               <div class="flow-node">
-                <div class="node-label">Verified Records</div>
+                <div class="node-label">Discharged</div>
                 <div class="node-value" id="fn-verified">65</div>
-                <div class="node-sub">Audit-ready chain</div>
+                <div class="node-sub">Flow completed</div>
               </div>
               <div class="flow-node">
-                <div class="node-label">Exception Queue</div>
+                <div class="node-label">Blocked Flow</div>
                 <div class="node-value" id="fn-exceptions">35</div>
-                <div class="node-sub">Remediation needed</div>
+                <div class="node-sub">Delay or escalation</div>
               </div>
             </div>
             <div class="sankey-svg-wrap">
@@ -890,7 +890,7 @@ input[type=range]::-moz-range-thumb{
             </div>
           </div>
           <p class="flow-story" id="flow-story">
-            The flow shows how the supplier pool converts to audit-ready provenance records. Onboarding friction and evidence failure rate determine the exception queue — the primary operational risk at current adoption pace.
+            The flow shows how presentations convert into admitted pathways, completed discharges and delayed care transitions. Admission pressure and discharge delay rate determine the blocked-flow queue, which is the primary operational risk at current demand levels.
           </p>
         </div>
       </div>
@@ -899,7 +899,7 @@ input[type=range]::-moz-range-thumb{
       <div class="interpretation-box" id="interpretation">
         <div class="interpretation-eyebrow">Executive Interpretation</div>
         <p class="interpretation-text" id="interp-text">
-          Projected supplier coverage reaches <strong id="i-coverage">74%</strong> by Q3 FY27 under Base Case assumptions. The primary constraint is EU regulatory acceptance, which adds an estimated 4–6 months to full activation. At current onboarding rates, compliance confidence remains above threshold through FY26 but faces downward pressure in H1 FY27. The board should prioritise EU regulator engagement and evidence remediation resourcing in the next planning cycle.
+          Capacity visibility reaches <strong id="i-coverage">74%</strong> by Q3 FY27 under Base Demand assumptions. The primary constraint is discharge delay, which limits usable bed capacity even when physical beds are available. At current demand levels, flow confidence remains above threshold through FY26 but faces downward pressure in H1 FY27. The executive team should prioritise discharge coordination, timestamp quality, and bed management governance in the next planning cycle.
         </p>
       </div>
 
@@ -934,7 +934,7 @@ input[type=range]::-moz-range-thumb{
 <footer class="site-footer">
   <div class="footer-inner">
     <span>Khaled Sanad · Portfolio</span>
-    <span>Asterion Grid · Critical Minerals Traceability Expansion · FY26–FY28</span>
+    <span>Asterion Health Analytics · Patient Flow Forecasting · FY26-FY28</span>
   </div>
 </footer>
 
@@ -942,15 +942,15 @@ input[type=range]::-moz-range-thumb{
 // ── Scenario base data ──
 const SCENARIOS = {
   base:{
-    label:"Base Case",
+    label:"Base Demand",
     chipClass:"base",
-    title:"Critical Minerals Traceability Forecast",
-    text:"Planning environment for supplier adoption, coverage, and risk trajectory across five regions. <strong style=\"color:var(--ink);font-weight:400\">Adjust assumptions to model alternatives;</strong> the interpretation panel updates in real time.",
-    constraint:"EU regulatory acceptance timeline",
-    posture:"Proceed with staged regional rollout",
-    coverage:74, confidence:81, savings:"$4.2M", savingsSub:"Audit labour and dispute resolution",
+    title:"Patient Flow and Capacity Forecast",
+    text:"Planning environment for emergency demand, inpatient capacity, discharge pressure, and operational risk across a multi-site health service. <strong style=\"color:var(--ink);font-weight:400\">Adjust assumptions to model alternatives;</strong> the interpretation panel updates in real time.",
+    constraint:"Discharge coordination and bed visibility",
+    posture:"Proceed with staged patient flow reporting rollout",
+    coverage:74, confidence:81, savings:"$4.2M", savingsSub:"Avoided escalation and manual coordination",
     risk:"Medium", riskSub:"Controlled with mitigation plan",
-    chartSignal:"Steady ramp", chartConstraint:"EU regulatory lag",
+    chartSignal:"Steady demand", chartConstraint:"Discharge delay",
     chart:{
       onboard:[18,36,56,78,102,128,148,162],
       validated:[14,29,46,64,84,106,124,138],
@@ -959,19 +959,19 @@ const SCENARIOS = {
       pressure:[18,24,31,38,45,51,55,57]
     },
     flow:{onboarded:74,evgap:26,verified:65,exceptions:35},
-    flowStory:"The flow shows how supplier pool converts to audit-ready provenance records. Onboarding friction and evidence failure rate determine the size of the exception queue — the primary operational risk at current adoption pace.",
-    interp:(c,conf)=>`Projected supplier coverage reaches <strong>${c}%</strong> by Q3 FY27 under current assumptions. The primary constraint is EU regulatory acceptance, which adds an estimated 4–6 months to full platform activation. At current onboarding rates, compliance confidence of <strong>${conf}</strong> remains above threshold through FY26 but faces downward pressure in H1 FY27. The board should prioritise EU regulator engagement and evidence remediation resourcing in the next planning cycle.`
+    flowStory:"The flow shows how presentations convert into admitted pathways, completed discharges and delayed care transitions. Admission pressure and discharge delay rate determine the blocked-flow queue, which is the primary operational risk at current demand levels.",
+    interp:(c,conf)=>`Capacity visibility reaches <strong>${c}%</strong> by Q3 FY27 under current assumptions. The primary constraint is discharge delay, which limits usable bed capacity even when physical beds are available. At current demand levels, flow confidence of <strong>${conf}</strong> remains above threshold through FY26 but faces downward pressure in H1 FY27. The executive team should prioritise discharge coordination, timestamp quality, and bed management governance in the next planning cycle.`
   },
   acc:{
-    label:"Accelerated Compliance",
+    label:"Winter Surge",
     chipClass:"acc",
-    title:"Regulatory frameworks align early — supplier onboarding outperforms.",
-    text:"Faster regulatory acceptance and stronger supplier adoption. Confidence is moderate — upside depends on external factors, not platform capability alone.",
-    constraint:"Sustaining evidence quality at scale",
-    posture:"Use as target case for milestone commitments",
-    coverage:89, confidence:91, savings:"$6.1M", savingsSub:"Higher coverage reduces audit exposure",
-    risk:"Low–Medium", riskSub:"Upside depends on EU and supplier alignment",
-    chartSignal:"Strong ramp", chartConstraint:"Evidence quality at scale",
+    title:"Winter surge - demand rises faster than base capacity.",
+    text:"Higher ED arrivals, stronger admission pressure and longer discharge cycles test the service's ability to maintain flow. Confidence is moderate because the pressure comes from demand, workforce availability and post-acute capacity together.",
+    constraint:"Maintaining discharge throughput during peak demand",
+    posture:"Use as surge-planning case for winter readiness",
+    coverage:89, confidence:91, savings:"$6.1M", savingsSub:"Earlier visibility reduces escalation cost",
+    risk:"Low-Medium", riskSub:"Upside depends on discharge and workforce response",
+    chartSignal:"Surge ramp", chartConstraint:"Discharge throughput",
     chart:{
       onboard:[24,50,80,112,144,172,192,206],
       validated:[20,44,72,102,132,158,178,194],
@@ -980,19 +980,19 @@ const SCENARIOS = {
       pressure:[14,18,23,28,32,35,36,36]
     },
     flow:{onboarded:89,evgap:11,verified:82,exceptions:18},
-    flowStory:"Accelerated onboarding and lower evidence failure rate dramatically reduce the exception queue. The risk shifts from volume coverage to quality assurance — schema validation and oracle input controls become the primary governance focus.",
-    interp:(c,conf)=>`Under Accelerated Compliance, projected supplier coverage reaches <strong>${c}%</strong> — the platform's target state — by mid-FY27. EU regulatory alignment is the decisive enabler, reducing the activation lag from 4–6 months to under 8 weeks. Compliance confidence of <strong>${conf}</strong> supports bringing forward the Phase 2 supplier cohort ahead of schedule. Asterion Grid should secure regulator engagement commitments from AU and SG counterparts in parallel to lock in the upside.`
+    flowStory:"Winter surge increases the number of patients entering the admitted pathway. Strong discharge coordination and better bed visibility reduce the blocked-flow queue, but only if daily operational routines keep pace with demand.",
+    interp:(c,conf)=>`Under Winter Surge, capacity visibility reaches <strong>${c}%</strong> by mid-FY27 because higher operational pressure forces faster adoption of patient flow reporting. The risk is that demand increases faster than discharge throughput. Flow confidence of <strong>${conf}</strong> supports earlier intervention if bed meetings, discharge reviews and escalation routines are used consistently. Asterion Health Analytics should lock in winter operating rules before the demand peak.`
   },
   del:{
-    label:"Regulatory Delay",
+    label:"Workforce Constraint",
     chipClass:"del",
-    title:"EU acceptance slips 6–9 months — FY27 delivery confidence compressed.",
-    text:"EU schema acceptance delays force resequencing. AU and SG absorb some volume but cannot compensate for EU cohort shortfall.",
-    constraint:"EU evidence schema approval and jurisdictional sequencing",
-    posture:"Activate AU and SG ahead of EU — preserve programme momentum",
-    coverage:58, confidence:64, savings:"$2.8M", savingsSub:"Reduced by EU coverage shortfall",
-    risk:"Medium–High", riskSub:"EU delay creates FY27 coverage gap",
-    chartSignal:"Compressed ramp", chartConstraint:"EU schema delay",
+    title:"Workforce constraint slows discharge and ward throughput.",
+    text:"Staffing shortages and competing operational priorities reduce available capacity. ED and bed data remain available, but the service cannot convert visibility into flow improvement at the expected pace.",
+    constraint:"Staffed capacity and discharge support",
+    posture:"Protect core reporting, reduce scope, and focus on bottleneck services",
+    coverage:58, confidence:64, savings:"$2.8M", savingsSub:"Reduced by workforce and throughput limits",
+    risk:"Medium-High", riskSub:"Staffing gap creates flow and adoption risk",
+    chartSignal:"Compressed improvement", chartConstraint:"Staffed capacity",
     chart:{
       onboard:[14,26,38,52,66,80,92,104],
       validated:[10,19,28,38,48,59,68,78],
@@ -1001,19 +1001,19 @@ const SCENARIOS = {
       pressure:[24,32,40,47,53,58,62,64]
     },
     flow:{onboarded:58,evgap:42,verified:48,exceptions:52},
-    flowStory:"EU regulatory delay forces resequencing. AU and SG suppliers onboard ahead of plan but cannot compensate for EU volume. The exception queue grows as suppliers submit evidence against schemas not yet formally accepted by EU regulators.",
-    interp:(c,conf)=>`EU schema acceptance slips 6–9 months under this scenario, reducing projected supplier coverage to <strong>${c}%</strong> by Q3 FY27 — a ${89-c} percentage point shortfall against target. Compliance confidence falls to <strong>${conf}</strong>, driven by onboarding resequencing and evidence remediation backlog in the EU cohort. AU and SG onboarding should be accelerated to maintain programme momentum while EU suppliers are held in a parallel preparation cohort. The board should seek formal EU regulatory timeline assurance and authorise contingency budget for evidence remediation within the next 60 days.`
+    flowStory:"Workforce constraint means visibility improves faster than actual throughput. More patients are identified as delayed or blocked, but fewer can be moved without staffed beds, discharge coordination and post-acute capacity.",
+    interp:(c,conf)=>`Workforce constraint reduces capacity visibility to <strong>${c}%</strong> by Q3 FY27 and limits the service's ability to convert reporting into better flow. Flow confidence falls to <strong>${conf}</strong>, driven by staffed capacity gaps, discharge delays and slower operational adoption. The programme should narrow focus to ED, high-pressure wards and discharge barriers while maintaining the broader data model for later rollout. The executive team should treat workforce assumptions as a hard constraint, not a dashboard adoption issue.`
   },
   res:{
-    label:"Black Swan",
+    label:"System Shock",
     chipClass:"res",
-    title:"Black Swan — systemic disruption collapses adoption trajectory.",
-    text:"A low-probability, high-impact external shock — regulatory reversal, geopolitical disruption, or a critical platform integrity event — forces a fundamental programme reassessment.",
-    constraint:"Systemic trust collapse and external shock severity",
-    posture:"Trigger crisis governance — board-level escalation and contingency activation",
-    coverage:42, confidence:51, savings:"$1.4M", savingsSub:"Severely limited by programme disruption",
-    risk:"High", riskSub:"Commercial model and programme viability at risk",
-    chartSignal:"Collapsed adoption", chartConstraint:"Systemic trust failure",
+    title:"System shock - demand and capacity move against the service.",
+    text:"A low-probability, high-impact external shock such as severe winter demand, system outage, industrial disruption or post-acute capacity collapse forces formal escalation and programme reassessment.",
+    constraint:"System-wide capacity and trust in operational data",
+    posture:"Trigger executive escalation and contingency activation",
+    coverage:42, confidence:51, savings:"$1.4M", savingsSub:"Severely limited by operational disruption",
+    risk:"High", riskSub:"Service stability and programme value at risk",
+    chartSignal:"Flow breakdown", chartConstraint:"System-wide capacity",
     chart:{
       onboard:[10,16,22,28,34,40,46,52],
       validated:[7,11,15,19,23,27,31,34],
@@ -1022,25 +1022,25 @@ const SCENARIOS = {
       pressure:[32,42,50,56,61,65,68,70]
     },
     flow:{onboarded:42,evgap:58,verified:32,exceptions:68},
-    flowStory:"A systemic shock leaves the majority of the supplier base outside the platform. Verified records cover only a third of target volume — insufficient for regulatory submissions and enterprise customer audits. The exception queue dominates, consuming remediation capacity and undermining programme credibility.",
-    interp:(c,conf)=>`The Black Swan scenario represents the programme's existential risk threshold. At <strong>${c}%</strong> projected coverage, Asterion Grid falls below the minimum viable threshold for regulatory submission quality and enterprise customer audit assurance. Compliance confidence drops to <strong>${conf}</strong>. The board must convene a formal programme review, assess whether recovery is achievable within the FY27 window, and determine whether scope, timeline, or revenue commitments require revision. Crisis governance protocols should activate immediately.`
+    flowStory:"A system shock leaves the service with insufficient flow capacity. Completed discharges cover only a minority of demand, and the blocked-flow queue dominates daily operations. Reporting still supports escalation, but it cannot compensate for missing capacity.",
+    interp:(c,conf)=>`The System Shock scenario represents the programme's escalation threshold. At <strong>${c}%</strong> capacity visibility, Asterion Health Analytics falls below the minimum useful threshold for routine operational control. Flow confidence drops to <strong>${conf}</strong>. The executive team must convene a formal service pressure review, determine whether recovery is achievable within the FY27 window, and decide whether scope, staffing or operational commitments require revision. Contingency governance should activate immediately.`
   }
 };
 
 // ── Detail cards ──
 const CARDS = [
-  {id:"regional",scenario:"base",chipClass:"base",tag:"Base",title:"Regional Rollout Sequencing",desc:"Phased entry across Australia, Singapore, EU, US, and Middle East based on regulatory maturity, supplier density, and platform readiness.",metricA:"5",metricALabel:"Regions in scope",metricB:"Q2 FY26",metricBLabel:"AU/SG go-live",meta:"Base · Regional",
-  content:`<p><strong>Purpose:</strong> This view models the sequencing of Asterion Grid's regional rollout, prioritising markets with the strongest regulatory alignment and supplier network density.</p><p>Australia and Singapore activate in Q2 FY26, benefiting from existing regulatory frameworks that recognise tamper-evident records and an established logistics and mining supplier base. The EU activates subject to supply-chain due diligence framework confirmation, estimated Q4 FY26 under Base Case. The US and Middle East enter as Phase 2 markets in FY27, with supplier onboarding sequenced around customs documentation and energy sector supply chains.</p><h2>Planning implication</h2><p>The sequencing is designed to maximise early coverage in high-value, high-readiness markets. If EU activation slips, AU and SG volume provides a revenue and credibility base while the regulatory position is resolved. Executive attention should focus on maintaining the AU/SG launch timeline and securing EU regulatory engagement commitments within the next 90 days.</p>`},
-  {id:"evidence",scenario:"base",chipClass:"base",tag:"Base",title:"Evidence Quality Forecast",desc:"Models the rate at which supplier-submitted attestations pass validation against the Asterion Grid evidence schema, and the expected exception backlog.",metricA:"88%",metricALabel:"Target pass rate",metricB:"12%",metricBLabel:"Baseline failure rate",meta:"Base · Evidence",
-  content:`<p><strong>Purpose:</strong> Evidence quality is the platform's core value proposition. This forecast models how the attestation pass rate evolves as suppliers mature their data submission processes and the schema validation engine matures.</p><p>At launch, the expected failure rate is 12–15% as suppliers adapt their internal data structures to the evidence schema. By Q4 FY26, schema tooling improvements and supplier onboarding support are expected to reduce failure rate to below 8%. The exception backlog is the operational risk: failed attestations require manual review, oracle verification, and supplier remediation — each adding 3–7 days to chain-of-custody confirmation.</p><h2>Planning implication</h2><p>Evidence quality controls — schema validation, oracle input monitoring, supplier feedback loops — should be treated as a platform capability investment, not an operational overhead. The payoff is a reduction in remediation cost and an increase in audit readiness that directly supports enterprise customer contracts and regulatory submissions.</p>`},
-  {id:"savings",scenario:"acc",chipClass:"acc",tag:"Accelerated",title:"Audit Labour Savings Projection",desc:"Quantifies the reduction in manual audit effort as platform coverage increases and verified records replace manual evidence collection.",metricA:"$6.1M",metricALabel:"Annual savings at 89% coverage",metricB:"18 mo",metricBLabel:"Payback horizon",meta:"Accelerated · Value",
-  content:`<p><strong>Purpose:</strong> The financial case for the Asterion Grid platform rests on displacing manual audit effort across suppliers, logistics providers, and compliance teams. This projection models how savings scale with coverage.</p><p>At 89% supplier coverage under the Accelerated scenario, annual audit labour savings across the supplier network reach $6.1M — a combination of reduced manual evidence collection ($2.8M), faster dispute resolution ($1.6M), and lower regulatory penalty exposure ($1.7M). Savings are non-linear: the first 50% of coverage delivers disproportionate returns because it captures the highest-volume supplier relationships.</p><h2>Planning implication</h2><p>The savings projection supports an 18-month payback on implementation cost. Executive reporting should separate realised savings (from live, audit-ready supplier records) from projected savings (from suppliers in onboarding). Only realised savings should inform FY27 budget assumptions.</p>`},
-  {id:"eudelay",scenario:"del",chipClass:"del",tag:"Regulatory Delay",title:"EU Delay Contingency Plan",desc:"Mitigation approach if EU supply-chain due diligence framework delays evidence schema acceptance beyond Q4 FY26.",metricA:"6–9 mo",metricALabel:"Estimated slip",metricB:"−16pt",metricBLabel:"Coverage impact",meta:"Regulatory Delay · Contingency",
-  content:`<p><strong>Purpose:</strong> The EU market represents the largest addressable supplier cohort in Phase 1. A 6–9 month delay in schema acceptance materially affects FY27 coverage and compliance confidence.</p><p>The contingency plan has three components. First, accelerate AU and SG onboarding to maximise coverage momentum independently of EU. Second, prepare EU suppliers in a parallel holding cohort — collecting evidence data against the draft schema so they can activate rapidly once regulatory confirmation is received. Third, engage EU regulatory contacts directly to understand the review timeline and provide technical schema documentation proactively.</p><h2>Planning implication</h2><p>The contingency plan preserves programme credibility and maintains enterprise customer confidence. It requires a modest additional investment in supplier pre-onboarding support and regulatory engagement resources — both of which should be treated as insurance against a scenario that would otherwise require formal programme rescoping.</p>`},
-  {id:"resistance",scenario:"res",chipClass:"res",tag:"Black Swan",title:"Black Swan Response Protocol",desc:"Board-level crisis governance and programme triage when a systemic external shock forces a fundamental reassessment of delivery viability.",metricA:"<50%",metricALabel:"Coverage at stall point",metricB:"Cost-share",metricBLabel:"Primary lever",meta:"Black Swan · Crisis",
-  content:`<p><strong>Purpose:</strong> Supplier resistance is the platform's most consequential commercial risk. This view models the levers available to recover adoption trajectory if onboarding stalls below the minimum viable coverage threshold.</p><p>Three levers are available. Tiered onboarding reduces the technical integration burden for small and mid-size suppliers by providing a managed submission service rather than a full API integration. Cost-sharing arrangements — funded by enterprise customer contracts — subsidise supplier onboarding costs in exchange for verified evidence commitments. Mandatory clauses in enterprise customer supply contracts create a pull-through obligation that bypasses supplier discretion entirely.</p><h2>Planning implication</h2><p>The mandatory clause approach is the most structurally robust but requires customer contract renegotiation. The board should authorise a commercial policy position on mandatory supplier obligations before Phase 2 launch. Without it, the programme's coverage ceiling is determined by supplier willingness rather than platform capability.</p>`},
-  {id:"oracle",scenario:"base",chipClass:"base",tag:"Base",title:"Oracle and Off-Chain Input Risk",desc:"Models the risk that blockchain records are compromised by inaccurate or manipulated data submitted through external data feeds and supplier APIs.",metricA:"High",metricALabel:"Risk classification",metricB:"Controls",metricBLabel:"Mitigation status",meta:"Base · Data Integrity",
-  content:`<p><strong>Purpose:</strong> The integrity of Asterion Grid's provenance records depends entirely on the accuracy of the data submitted to the platform. Blockchain immutability guarantees that records cannot be altered after submission — but it also means that incorrect data, once recorded, becomes a permanent liability.</p><p>Oracle risk arises when external data feeds — supplier systems, customs APIs, certification bodies, IoT sensors — submit inaccurate, delayed, or manipulated information. The platform's evidence schema and validation engine provide the first line of defence. Secondary controls include cross-reference checks against authoritative sources, anomaly detection on submission patterns, and supplier-level audit trails that allow source data reconstruction.</p><h2>Planning implication</h2><p>Oracle risk management should be classified as a platform capability investment, not an operational overhead. The controls required — source validation, anomaly detection, cross-reference architecture — are not unique to Asterion Grid, but the consequences of failure are higher because the records are immutable and form the basis of regulatory submissions and enterprise audit reports.</p>`}
+  {id:"regional",scenario:"base",chipClass:"base",tag:"Base",title:"Service Rollout Sequencing",desc:"Phased deployment across ED, inpatient wards, discharge coordination, elective access and executive reporting based on data readiness, operational pressure and clinical governance.",metricA:"5",metricALabel:"Services in scope",metricB:"Q2 FY26",metricBLabel:"ED/wards pilot",meta:"Base · Service Rollout",
+  content:`<p><strong>Purpose:</strong> This view models the sequencing of Asterion Health Analytics' patient flow rollout, prioritising services with the strongest data readiness and the most visible operational pressure.</p><p>Emergency department and inpatient ward reporting activate in Q2 FY26, using existing PAS, ED and bed management data. Discharge coordination follows once delay reasons and expected discharge dates are validated. Elective access and executive reporting enter as Phase 2 streams in FY27, once definitions and governance controls are stable.</p><h2>Planning implication</h2><p>The sequencing is designed to create early operational value without pretending the full health data environment is already mature. If discharge data quality slips, ED and ward flow reporting still provides a useful base while discharge definitions are remediated. Executive attention should focus on timestamp quality, source-system ownership and clinical operations sign-off within the next 90 days.</p>`},
+  {id:"evidence",scenario:"base",chipClass:"base",tag:"Base",title:"Flow Data Quality Forecast",desc:"Models the rate at which ED, inpatient, bed and discharge records pass validation against agreed reporting definitions, and the expected exception backlog.",metricA:"88%",metricALabel:"Target pass rate",metricB:"12%",metricBLabel:"Baseline exception rate",meta:"Base · Data Quality",
+  content:`<p><strong>Purpose:</strong> Flow data quality is the foundation of the dashboard. This forecast models whether timestamps, ward movements, admission status and discharge fields are complete enough to support daily operational reporting.</p><p>At launch, the expected exception rate is 12-15% as local workflows, source-system fields and reporting definitions are aligned. By Q4 FY26, data quality rules and operational feedback are expected to reduce exceptions to below 8%. The backlog is the operational risk: unresolved data issues create disputes about the dashboard instead of action on the bottleneck.</p><h2>Planning implication</h2><p>Data quality controls should be treated as part of the operating model, not a technical afterthought. Timestamp validation, discharge reason definitions, source reconciliation and exception ownership directly affect whether leaders trust the dashboard during daily flow decisions.</p>`},
+  {id:"savings",scenario:"acc",chipClass:"acc",tag:"Winter Surge",title:"Avoided Escalation Cost Projection",desc:"Quantifies the reduction in manual coordination, avoidable escalation and lost capacity as patient flow visibility improves during peak demand.",metricA:"$6.1M",metricALabel:"Annual benefit at 89% visibility",metricB:"18 mo",metricBLabel:"Payback horizon",meta:"Winter Surge · Value",
+  content:`<p><strong>Purpose:</strong> The value case for patient flow reporting rests on earlier visibility of demand, delays and capacity pressure. This projection models how benefits scale with adoption.</p><p>At 89% capacity visibility under the Winter Surge scenario, annual operational benefit reaches $6.1M through reduced manual coordination, earlier discharge intervention, fewer avoidable escalations and better use of staffed capacity. Benefits are not linear: the first services connected deliver disproportionate value because ED, wards and discharge coordination drive the main bottlenecks.</p><h2>Planning implication</h2><p>The benefit projection supports an 18-month payback on implementation cost. Executive reporting should separate realised benefit from projected benefit. Only benefits linked to live, used dashboards and changed operating routines should inform FY27 budget assumptions.</p>`},
+  {id:"eudelay",scenario:"del",chipClass:"del",tag:"Workforce Constraint",title:"Staffed Capacity Contingency Plan",desc:"Mitigation approach if workforce availability limits the service's ability to convert patient flow visibility into actual throughput improvement.",metricA:"6-9 mo",metricALabel:"Estimated delay",metricB:"-16pt",metricBLabel:"Visibility impact",meta:"Workforce Constraint · Contingency",
+  content:`<p><strong>Purpose:</strong> Staffed capacity is the main constraint in the Workforce Constraint scenario. The dashboard can show where pressure exists, but it cannot create the staff, beds or post-acute capacity needed to move patients safely.</p><p>The contingency plan has three components. First, narrow reporting scope to the highest-pressure services so limited operational attention is not spread too thinly. Second, prioritise discharge barriers that can be acted on daily, such as transport, pharmacy, allied health review and placement status. Third, separate physical bed capacity from staffed bed capacity in every executive view.</p><h2>Planning implication</h2><p>The contingency plan preserves programme credibility by avoiding overclaiming. It requires a modest additional investment in workflow support, super-user coverage and discharge data remediation. These should be treated as risk controls against a scenario where better reporting exposes capacity pressure but cannot resolve it alone.</p>`},
+  {id:"resistance",scenario:"res",chipClass:"res",tag:"System Shock",title:"System Shock Response Protocol",desc:"Executive-level escalation and programme triage when severe demand, outage, industrial disruption or post-acute capacity collapse forces reassessment of delivery viability.",metricA:"<50%",metricALabel:"Visibility at stall point",metricB:"Scope reset",metricBLabel:"Primary lever",meta:"System Shock · Crisis",
+  content:`<p><strong>Purpose:</strong> System shock is the programme's most consequential operating risk. This view models the levers available when the service falls below the minimum useful threshold for routine patient flow control.</p><p>Three levers are available. The first is scope reset, reducing the reporting footprint to ED, bed status and discharge barriers only. The second is escalation governance, moving from routine dashboard use to formal executive service pressure review. The third is manual control support, where reporting outputs are simplified into daily action lists rather than broader analytical dashboards.</p><h2>Planning implication</h2><p>The scope reset approach is the most realistic under system shock because it protects the information that still supports urgent decisions. The executive team should approve a clear trigger point before rollout. Without a defined trigger, the programme risks being judged against normal conditions while operating in crisis conditions.</p>`},
+  {id:"oracle",scenario:"base",chipClass:"base",tag:"Base",title:"Source System and Input Risk",desc:"Models the risk that patient flow reporting is compromised by inaccurate, delayed or inconsistently mapped data from PAS, ED, bed management and discharge systems.",metricA:"High",metricALabel:"Risk classification",metricB:"Controls",metricBLabel:"Mitigation status",meta:"Base · Data Integrity",
+  content:`<p><strong>Purpose:</strong> The integrity of the patient flow dashboard depends on the accuracy of data submitted by source systems and local workflows. A dashboard can only be trusted if its timestamps, statuses and locations reflect what is happening operationally.</p><p>Input risk arises when source systems submit inaccurate, delayed or inconsistently mapped information. Examples include late discharge times, ward transfers not recorded promptly, admission status lag, unclear bed definitions and local workarounds. The first line of defence is a visible data quality layer. Secondary controls include reconciliation to source systems, exception queues and local owner review.</p><h2>Planning implication</h2><p>Source-system risk management should be treated as a core deployment capability. The controls required - source validation, exception reporting, reconciliation and ownership - are not unique to healthcare, but the consequences of failure are higher because the dashboard may influence operational decisions about patient movement, escalation and capacity.</p>`}
 ];
 
 // ── State ──
@@ -1156,9 +1156,9 @@ function updateDashboard(){
 
   // Risk — reactive to confidence
   const riskEl = document.getElementById("kpi-risk");
-  const riskLabel = confidence >= 78 ? "Low–Medium" : confidence >= 60 ? "Medium" : confidence >= 42 ? "Medium–High" : "High";
+  const riskLabel = confidence >= 78 ? "Low-Medium" : confidence >= 60 ? "Medium" : confidence >= 42 ? "Medium-High" : "High";
   riskEl.textContent = riskLabel;
-  riskEl.className = "kpi-value " + (riskLabel==="Low–Medium"?"green":riskLabel==="Medium"?"amber":"red");
+  riskEl.className = "kpi-value " + (riskLabel==="Low-Medium"?"green":riskLabel==="Medium"?"amber":"red");
   document.getElementById("kpi-risk-sub").textContent = sc.riskSub;
 
   // Chart labels
@@ -1284,7 +1284,7 @@ function drawChart(data){
   ctx.fillStyle = "rgba(245,242,237,0.28)";
   ctx.textAlign = "right";
   ctx.font = "9px 'DM Mono'";
-  ctx.fillText("Line scale: 0–100%", w-pad.right, 14);
+  ctx.fillText("Line scale: 0-100%", w-pad.right, 14);
 }
 
 // ── Sankey SVG renderer ──
@@ -1295,14 +1295,14 @@ function drawSankey(onb, evg, ver, exc){
   const vbH = 260;
   const vbW = 320;
 
-  // Source splits into onboarded (top) and not-onboarded (bottom)
-  // Onboarded → Verified (top right)
-  // Not-onboarded → Exceptions (bottom right)
+  // Source splits into admitted (top) and not admitted (bottom)
+  // Admitted → Discharged (top right)
+  // Not admitted → Blocked flow (bottom right)
   const srcY   = vbH / 2;        // 130 — source mid
-  const onbY   = vbH * 0.28;     // 73  — onboarded band centre
-  const evgY   = vbH * 0.78;     // 203 — not-onboarded band centre
-  const verY   = vbH * 0.22;     // 57  — verified centre
-  const excY   = vbH * 0.82;     // 213 — exceptions centre
+  const onbY   = vbH * 0.28;     // 73  — admitted band centre
+  const evgY   = vbH * 0.78;     // 203 — not admitted band centre
+  const verY   = vbH * 0.22;     // 57  — discharged centre
+  const excY   = vbH * 0.82;     // 213 — blocked flow centre
 
   const clamp = (v,mn,mx) => Math.max(mn, Math.min(mx, v));
   const onbN = clamp(onb, 0, 100);
@@ -1336,19 +1336,19 @@ function drawSankey(onb, evg, ver, exc){
   // Source → split
   html += ribbon(x0, srcY, onbH, x1, onbY, onbH, "#6b8fa8", 0.48);
   html += ribbon(x0, srcY, evgH, x1, evgY, evgH, "#c49a55", 0.38);
-  // Onboarded → Verified
+  // Admitted → Discharged
   html += ribbon(x1, onbY, onbH, x2, verY, verH, "#5f9a78", 0.46);
   html += ribbon(x2, verY, verH, x3, verY, verH, "#5f9a78", 0.40);
-  // Not-onboarded → Exceptions
+  // Not admitted → Blocked flow
   html += ribbon(x1, evgY, evgH, x2, excY, excH, "#b4685d", 0.42);
   html += ribbon(x2, excY, excH, x3, excY, excH, "#b4685d", 0.36);
 
   // Right-edge labels
-  html += `<text x="${x3+4}" y="${verY+4}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.45)">Verified</text>`;
-  html += `<text x="${x3+4}" y="${excY+4}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.45)">Exceptions</text>`;
+  html += `<text x="${x3+4}" y="${verY+4}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.45)">Discharged</text>`;
+  html += `<text x="${x3+4}" y="${excY+4}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.45)">Blocked</text>`;
   // Mid labels
-  html += `<text x="${x1+4}" y="${onbY - onbH - 5}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.32)">Onboarded</text>`;
-  html += `<text x="${x1+4}" y="${evgY + evgH + 12}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.32)">Not onboarded</text>`;
+  html += `<text x="${x1+4}" y="${onbY - onbH - 5}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.32)">Admitted</text>`;
+  html += `<text x="${x1+4}" y="${evgY + evgH + 12}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.32)">Not admitted</text>`;
 
   svg.innerHTML = html;
 }
@@ -1400,7 +1400,7 @@ expandBtn.addEventListener("click",()=>{
 });
 
 // ── Cards ──
-// Deliberate: Base Case shows all cards as a survey of the full suite.
+// Deliberate: Base Demand shows all cards as a survey of the full suite.
 // Other scenarios show only their own cards. This is intentional.
 function renderCards(){
   cardGrid.innerHTML = "";
@@ -1463,7 +1463,7 @@ document.querySelectorAll(".scenario-tab").forEach(btn=>{
     document.querySelectorAll(".scenario-tab").forEach(b=>b.classList.remove("active"));
     btn.classList.add("active");
     activeScenario = btn.dataset.scenario;
-    applyDefaults(); // resets to this scenario's defaults, not Base Case
+    applyDefaults(); // resets to this scenario's defaults, not Base Demand values
     updateDashboard();
     renderCards();
   });
