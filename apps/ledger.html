@@ -12,29 +12,10 @@
        sourced from tokens.css's distinct --accent-ledger indigo. */
     --accent: var(--accent-ledger);
     --accent-hover: var(--accent-ledger-hover);
-    --accent-light: rgba(var(--accent-ledger-rgb), 0.1);
+    --accent-light: rgba(var(--accent-ledger-rgb), 0.08);
     --accent-mid: rgba(var(--accent-ledger-rgb), var(--accent-mid-opacity));
-    --tag-bg: rgba(var(--border-rgb), 0.05);
-    --tag-ink: rgba(var(--ink-rgb), 0.45);
-    --card-shadow: 0 1px 3px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.2);
-    --card-shadow-hover: 0 4px 12px rgba(0,0,0,.4), 0 12px 40px rgba(0,0,0,.3);
-  }
-
-  html.light {
-    --bg: var(--ledger-light-bg);
-    --surface: var(--ledger-light-surface);
-    --surface-alt: var(--ledger-light-surface-alt);
-    --border: var(--ledger-light-border);
-    --border-soft: var(--ledger-light-border-soft);
-    --ink: var(--ledger-light-ink);
-    --ink-2: var(--ledger-light-ink-2);
-    --ink-3: var(--ledger-light-ink-3);
-    --accent: var(--accent-ledger-light);
-    --accent-hover: var(--accent-ledger-light-hover);
-    --accent-light: rgba(var(--accent-ledger-light-rgb), 0.08);
-    --accent-mid: rgba(var(--accent-ledger-light-rgb), 0.2);
-    --tag-bg: rgba(var(--ledger-light-border-rgb), 0.06);
-    --tag-ink: rgba(var(--ledger-light-ink-rgb), 0.55);
+    --tag-bg: rgba(var(--border-rgb), 0.06);
+    --tag-ink: rgba(var(--ink-rgb), 0.55);
     --card-shadow: 0 1px 3px rgba(28,43,53,.06), 0 4px 16px rgba(28,43,53,.04);
     --card-shadow-hover: 0 4px 12px rgba(28,43,53,.1), 0 12px 40px rgba(28,43,53,.07);
   }
@@ -83,7 +64,7 @@
   @media (min-width: 600px) { .header-tagline { display: block; } }
   .header-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 
-  .theme-toggle, .random-btn, .filter-mobile-trigger {
+  .random-btn, .filter-mobile-trigger {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -99,7 +80,7 @@
     transition: color var(--tr), border-color var(--tr), background var(--tr);
     white-space: nowrap;
   }
-  .theme-toggle:hover, .random-btn:hover, .filter-mobile-trigger:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-light); }
+  .random-btn:hover, .filter-mobile-trigger:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-light); }
 
   .hero {
     padding: 20px 0 18px;
@@ -213,7 +194,6 @@
   }
   .article-card.featured .card-title { font-size: 1.4rem; }
   .card-summary { font-size: .86rem; color: rgba(var(--ink-rgb),0.55); line-height: 1.65; flex: 1; }
-  html.light .card-summary { color: rgba(var(--ledger-light-ink-rgb),0.58); }
   .card-stack {
     font-size: .75rem;
     color: var(--ink-3);
@@ -376,12 +356,6 @@
       <div class="header-left">
         <div class="site-logo" id="logo-home" tabindex="0" role="button" aria-label="Return to library">Ledger<span>.</span></div>
         <div class="header-tagline">A mechanics-first reference library — <strong>214 essential concepts</strong> in health data, clinical systems, and reporting infrastructure.</div>
-      </div>
-      <div class="header-right">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-          <span class="toggle-icon" id="toggle-icon">○</span>
-          <span id="toggle-label">light</span>
-        </button>
       </div>
     </div>
   </div>
@@ -3923,15 +3897,6 @@ document.addEventListener("keydown", e => {
   if (e.key === "Escape" && articleView.classList.contains("active")) closeArticleView();
 });
 
-const themeToggle = document.getElementById("theme-toggle");
-const toggleIcon = document.getElementById("toggle-icon");
-const toggleLabel = document.getElementById("toggle-label");
-
-themeToggle.addEventListener("click", () => {
-  const isLight = document.documentElement.classList.toggle("light");
-  toggleIcon.textContent = isLight ? "●" : "○";
-  toggleLabel.textContent = isLight ? "dark" : "light";
-});
 
 buildFilters();
 renderCards();
