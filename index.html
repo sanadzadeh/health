@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23141414'/><rect x='2' y='2' width='28' height='28' rx='3' fill='none' stroke='%23c9a96e' stroke-width='2'/><circle cx='16' cy='16' r='8' fill='none' stroke='%23c9a96e' stroke-width='2'/></svg>">
-<title>Khaled Sanad — Portfolio</title>
+<title>Khaled Sanad - Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -171,7 +171,6 @@
   .tile.narrow .tile-footer,
   .tile.narrow .tile-desc { display: none; }
 
-  /* ── Overlay ── */
   .overlay {
     position: fixed;
     inset: 0;
@@ -323,13 +322,13 @@
       </div>
     </a>
 
-    <a class="tile" href="apps/ledger.html" data-title="Ledger">
+    <a class="tile" href="apps/ledger.html" data-title="Health Data Glossary">
       <div>
-        <div class="tile-title">Ledger</div>
-        <div class="tile-desc">Structured explanations of blockchain, DeFi, stablecoins, RWAs, custody, regulation, and the financial systems being rebuilt on top of cryptocurrencies.</div>
+        <div class="tile-title">Health Data Glossary</div>
+        <div class="tile-desc">Mechanics-first reference library explaining the health data concepts a clinical, operational, or analytics person should understand: patient flow, EMR, PAS, coding, funding, privacy, governance, and reporting definitions.</div>
       </div>
       <div class="tile-footer">
-        <span class="tile-tag active">Reference · Knowledge</span>
+        <span class="tile-tag active">Healthcare · Reference</span>
         <span class="tile-arrow">↗</span>
       </div>
     </a>
@@ -352,7 +351,7 @@
     <a class="tile extra-tile" href="apps/stakeholder-mapping.html" data-title="Stakeholder Mapping Tool">
       <div>
         <div class="tile-title">Stakeholder Mapping Tool</div>
-        <div class="tile-desc">Maps stakeholders by influence and interest, assigns engagement strategies, and produces a clean visual grid — a standard consulting deliverable rebuilt as a browser tool.</div>
+        <div class="tile-desc">Maps stakeholders by influence and interest, assigns engagement strategies, and produces a clean visual grid suitable for programme planning and change work.</div>
       </div>
       <div class="tile-footer">
         <span class="tile-tag active">Engagement · Change</span>
@@ -363,7 +362,7 @@
     <a class="tile extra-tile" href="apps/business-case-builder.html" data-title="Business Case Builder">
       <div>
         <div class="tile-title">Business Case Builder</div>
-        <div class="tile-desc">Structured framework for framing a business case: problem statement, options, costs, benefits, risks, and recommendation — outputting a clean executive summary view.</div>
+        <div class="tile-desc">Structured framework for framing a business case: problem statement, options, costs, benefits, risks, and recommendation, producing a clean executive summary view.</div>
       </div>
       <div class="tile-footer">
         <span class="tile-tag active">Strategy · Justification</span>
@@ -374,7 +373,6 @@
   </div>
 </main>
 
-<!-- Overlay -->
 <div class="overlay" id="overlay">
   <div class="overlay-bar">
     <button class="overlay-home" id="overlayClose">..back to <em>Portfolio</em></button>
@@ -384,7 +382,6 @@
 </div>
 
 <script>
-  // More/less toggle
   const toggle = document.getElementById("moreToggle");
   const grid = document.querySelector(".grid");
   toggle.addEventListener("click", () => {
@@ -396,7 +393,6 @@
       : '<span class="blink-dot"></span>..more';
   });
 
-  // Overlay
   const overlay = document.getElementById("overlay");
   const overlayFrame = document.getElementById("overlayFrame");
   const overlayTitle = document.getElementById("overlayTitle");
@@ -404,15 +400,15 @@
 
   let overlayOpen = false;
 
-function openOverlay(href, title) {
-  const absoluteUrl = new URL(href, window.location.href).href;
-  overlayFrame.src = absoluteUrl;
-  overlayTitle.textContent = title;
-  overlay.classList.add("active");
-  document.body.style.overflow = "hidden";
-  overlayOpen = true;
-  history.pushState({ overlay: true }, "");
-}
+  function openOverlay(href, title) {
+    const absoluteUrl = new URL(href, window.location.href).href;
+    overlayFrame.src = absoluteUrl;
+    overlayTitle.textContent = title;
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+    overlayOpen = true;
+    history.pushState({ overlay: true }, "");
+  }
 
   function closeOverlay() {
     overlay.classList.remove("active");
