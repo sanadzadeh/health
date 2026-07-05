@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Decision Matrix — Khaled Sanad</title>
+  <title>Health Prioritisation Matrix — Khaled Sanad</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <style>
@@ -144,33 +144,33 @@
 <body>
 
 <header>
-  <div class="site-logo">Khaled Sanad: <em>Decision Matrix</em></div>
-  <span class="status-badge">Asterion Grid · Phase 2 Expansion</span>
+  <div class="site-logo">Khaled Sanad: <em>Health Prioritisation Matrix</em></div>
+  <span class="status-badge">Asterion Health Analytics · Reporting Uplift</span>
 </header>
 
 <div class="page">
 
   <div class="eyebrow">Strategic Evaluation</div>
-  <h1 class="section-title">Phase 2 Jurisdiction Prioritisation — Asterion Grid</h1>
-  <p class="section-sub">Three regional expansion options evaluated across six weighted criteria. Assessment covers regulatory readiness, supplier density, platform complexity, strategic value, and risk exposure.</p>
+  <h1 class="section-title">Health Analytics Initiative Prioritisation — Asterion Health Analytics</h1>
+  <p class="section-sub">Three health data initiatives evaluated across six weighted criteria. Assessment covers patient impact, data readiness, privacy and governance risk, operational feasibility, executive priority, and time to benefit.</p>
 
   <div class="recommendation-strip">
-    <span class="recommendation-name">AU-First Rollout</span>
+    <span class="recommendation-name">Patient Flow First</span>
     <span class="recommendation-label">is the recommended option</span>
-    <span class="recommendation-score">76.4 <span>/ 100</span></span>
+    <span class="recommendation-score">78.8 <span>/ 100</span></span>
     <a class="details-link" href="#rec-detail">Details ↓</a>
   </div>
 
   <div class="context-radar-grid">
     <div class="context-box mobile-hide-context">
       <div class="eyebrow" style="margin-bottom:.75rem">Programme</div>
-      <div class="programme-title">Critical Minerals Traceability<br><span>Phase 2 · FY26–FY27</span></div>
+      <div class="programme-title">Health Service Intelligence Uplift<br><span>Priority 1 · FY26–FY27</span></div>
       <div class="context-list">
-        <div class="context-row"><span>Decision type</span><span>Jurisdiction prioritisation</span></div>
-        <div class="context-row"><span>Options evaluated</span><span>3 regional rollout sequences</span></div>
+        <div class="context-row"><span>Decision type</span><span>Analytics initiative prioritisation</span></div>
+        <div class="context-row"><span>Options evaluated</span><span>3 candidate initiatives</span></div>
         <div class="context-row"><span>Criteria dimensions</span><span>6 weighted</span></div>
         <div class="context-row"><span>Max score</span><span>100 points</span></div>
-        <div class="context-row"><span>Recommended</span><span class="accent-value">AU-First Rollout</span></div>
+        <div class="context-row"><span>Recommended</span><span class="accent-value">Patient Flow First</span></div>
       </div>
     </div>
     <div class="radar-box">
@@ -194,9 +194,9 @@
         <tr>
           <th>Criterion</th>
           <th>Weight</th>
-          <th class="option-col">AU-First</th>
-          <th class="option-col">SG-First</th>
-          <th class="option-col">EU-First</th>
+          <th class="option-col">Patient Flow</th>
+          <th class="option-col">Elective Backlog</th>
+          <th class="option-col">Quality Reporting</th>
         </tr>
       </thead>
       <tbody id="matrix-body"></tbody>
@@ -218,19 +218,19 @@
     <div class="rec-grid">
       <div class="rec-panel">
         <div class="rec-panel-title">Strengths</div>
-        <div class="rec-panel-text">Australia scores highest on regulatory readiness (9/10) — the Australian government's Critical Minerals Strategy and existing AUSTRAC/APRA frameworks provide a well-understood compliance environment. Supplier density in lithium and nickel is highest in AU, reducing onboarding friction. Implementation complexity is lowest of the three options, enabling a faster evidence of value cycle.</div>
+        <div class="rec-panel-text">Patient Flow First scores highest on patient impact (9/10) and operational feasibility (8/10). The initiative uses data already present in PAS, ED, bed management and discharge workflows, making it easier to deliver without waiting for a full clinical data platform uplift. It also addresses a visible operational pressure: ED crowding, bed availability, discharge delay and inpatient flow.</div>
       </div>
       <div class="rec-panel">
         <div class="rec-panel-title">Conditions</div>
-        <div class="rec-panel-text">Approval is conditional on: (1) confirmation of at least three Tier 1 mining supplier commitments before go-live; (2) AUSTRAC evidence schema acceptance in writing; (3) a delivery plan covering supplier onboarding, oracle integration, and audit pack generation within the FY26 window. SG activation should begin in parallel as a pre-staging exercise.</div>
+        <div class="rec-panel-text">Approval is conditional on: (1) agreement on patient flow definitions across ED, inpatient units and discharge teams; (2) confirmation of source-system ownership for PAS, ED and bed data; (3) privacy review for patient-level drill-through; (4) clinical operations sign-off before executive reporting is used for daily performance review.</div>
       </div>
       <div class="rec-panel">
         <div class="rec-panel-title">Risks</div>
-        <div class="rec-panel-text">Strategic value is moderate (7/10) — Australia's market, while operationally ideal, is smaller than the EU addressable opportunity. Revenue upside is lower in the short term. If enterprise customer demand is concentrated in EU-regulated supply chains, the AU-first sequencing may delay commercial momentum. This should be monitored in Q1 FY26.</div>
+        <div class="rec-panel-text">The main risk is interpretation. Flow measures are sensitive to timestamp quality, late updates, ward transfer rules and local workflow differences. If the dashboard is used without clear definitions, teams may dispute the numbers rather than act on the bottlenecks. A data quality strip should be included in the first release.</div>
       </div>
       <div class="rec-panel">
         <div class="rec-panel-title">Fallback</div>
-        <div class="rec-panel-text">If Tier 1 supplier commitments cannot be secured in AU, SG-First is the recommended fallback. Singapore's regulatory posture is strong, the MAS framework is well-aligned to the platform's evidence model, and the logistics and commodities sector density makes it a credible first market. EU-First is not recommended as a fallback given the pending schema acceptance risk.</div>
+        <div class="rec-panel-text">If patient flow data ownership cannot be agreed quickly, Elective Backlog should be the fallback. It has a clearer operating cohort, strong executive visibility and a narrower data footprint. Quality Reporting is strategically important, but it should follow once coding, clinical definitions and governance controls are stronger.</div>
       </div>
     </div>
   </div>
@@ -239,34 +239,34 @@
 
 <footer>
   <span>Khaled Sanad · Portfolio</span>
-  <span>Asterion Grid · Jurisdiction Prioritisation · Phase 2</span>
+  <span>Asterion Health Analytics · Initiative Prioritisation · FY26</span>
 </footer>
 
 <script>
 const CRITERIA = [
-  {name:"Regulatory Readiness",  weight:25, desc:"Clarity of regulatory framework and evidence schema acceptance likelihood"},
-  {name:"Supplier Density",      weight:22, desc:"Volume and quality of addressable suppliers in the target jurisdiction"},
-  {name:"Implementation Risk",   weight:18, desc:"Platform complexity, integration effort, and onboarding friction"},
-  {name:"Strategic Value",       weight:15, desc:"Revenue potential, enterprise customer demand, and long-term market position"},
-  {name:"Political Risk",        weight:12, desc:"Geopolitical stability, export policy volatility, and regulatory change risk"},
-  {name:"Time to Value",         weight:8,  desc:"Speed from contract to first verified provenance record and enterprise contract"},
+  {name:"Patient Impact",        weight:25, desc:"Expected effect on access, safety, timeliness, patient flow, or care visibility"},
+  {name:"Data Readiness",        weight:20, desc:"Availability, structure, quality, and ownership of required source data"},
+  {name:"Operational Feasibility", weight:18, desc:"Delivery complexity, workflow fit, adoption effort, and implementation burden"},
+  {name:"Governance Risk",       weight:15, desc:"Privacy, access, definition, clinical validation, and reporting control exposure"},
+  {name:"Executive Priority",    weight:12, desc:"Alignment with current leadership focus, service pressure, and board visibility"},
+  {name:"Time to Benefit",       weight:10, desc:"Speed from build approval to useful decision-support output"},
 ];
 
 const OPTIONS = [
   {
-    name:"AU-First Rollout",
-    scores:[9,8,8,7,8,9],
-    desc:"Australia provides the strongest regulatory alignment, the highest supplier density for critical minerals, and the lowest implementation friction. Fastest path to a verified evidence base."
+    name:"Patient Flow First",
+    scores:[9,8,8,7,9,8],
+    desc:"Prioritises ED demand, bed occupancy, discharge delay and inpatient flow. Highest immediate operational value and strongest alignment with visible service pressure."
   },
   {
-    name:"SG-First Rollout",
-    scores:[8,7,7,8,9,7],
-    desc:"Singapore offers strong regulatory posture and low political risk. Supplier density is lower but logistics sector integration creates a strong secondary network effect for commodity routing."
+    name:"Elective Backlog First",
+    scores:[8,7,7,8,8,7],
+    desc:"Focuses on elective surgery access, waitlist pressure, urgency categories and theatre utilisation. Strong executive relevance, but narrower operational footprint."
   },
   {
-    name:"EU-First Rollout",
-    scores:[6,6,5,9,6,4],
-    desc:"Highest strategic value due to EU supply-chain due diligence regulation demand, but evidence schema acceptance is pending and implementation complexity is highest of the three options."
+    name:"Quality Reporting First",
+    scores:[7,6,5,6,7,5],
+    desc:"Targets clinical quality, complications, readmissions and safety indicators. High long-term value, but stronger dependency on coding quality, clinical validation and stable definitions."
   }
 ];
 
@@ -342,10 +342,10 @@ ranked.forEach((o,i)=>{
 const winner = ranked[0], runnerup = ranked[1];
 const gap = (winner.total-runnerup.total).toFixed(1);
 document.getElementById("rec-text").innerHTML = `
-  <strong>${winner.name}</strong> is the recommended Phase 2 entry point with a weighted score of <strong>${winner.total} / 100</strong> — a margin of <strong>${gap} points</strong> over the next-ranked option.
-  It leads on Regulatory Readiness and Time to Value, which together carry a 33% combined weighting.
-  The AU supplier base provides the fastest path to a verified evidence record and enterprise contract, reducing commercial risk in the critical first operating year.
-  Conditional approval is recommended subject to Tier 1 supplier commitments, AUSTRAC schema acceptance, and a confirmed delivery plan.`;
+  <strong>${winner.name}</strong> is the recommended first health analytics initiative with a weighted score of <strong>${winner.total} / 100</strong> and a margin of <strong>${gap} points</strong> over the next-ranked option.
+  It leads on Patient Impact and Executive Priority, while still scoring strongly on Data Readiness and Operational Feasibility.
+  The initiative gives operational leaders a clearer view of ED pressure, inpatient capacity, discharge delay and patient movement, using data sources that already exist in the health service environment.
+  Conditional approval is recommended subject to agreed definitions, source-system ownership, privacy review and clinical operations sign-off.`;
 
 // Radar
 const OPTION_COLOURS = [
@@ -373,7 +373,7 @@ for(let i=0;i<n;i++){
 }
 // Axis labels
 ctx.font="9px 'DM Mono',monospace"; ctx.fillStyle="rgba(245,242,237,0.35)"; ctx.textAlign="center"; ctx.textBaseline="middle";
-const SHORT = ["Regulatory","Suppliers","Impl. Risk","Strategic","Political","Time to Value"];
+const SHORT = ["Patient","Data","Feasibility","Governance","Executive","Benefit"];
 CRITERIA.forEach((c,i)=>{ const p=axisPoint(i,R+18); ctx.fillText(SHORT[i],p.x,p.y); });
 
 // Data polygons — draw in reverse ranked order so winner is on top
