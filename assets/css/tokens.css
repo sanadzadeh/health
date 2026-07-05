@@ -6,6 +6,7 @@
 :root {
   /* ── Neutrals ─────────────────────────────────────────────── */
   --bg:           #141414;
+  --bg-rgb:       20,20,20;
   --surface:      #1c1c1c;
   --surface-alt:  #222222;
   --surface-hi:   #282828;
@@ -89,6 +90,11 @@
   /* Standard dim/mid tint opacities applied uniformly across every accent. */
   --accent-dim-opacity: 0.12;
   --accent-mid-opacity: 0.25;
+
+  /* Theme-invariant text colour for use on top of a saturated accent fill
+     (e.g. an active pill/button) — deliberately does NOT flip with
+     light/dark theme, since the accent fill itself stays legible either way. */
+  --on-accent: #fff;
 
   /* ── Ledger's light theme (the only artefact with one) ───────
      Kept separate from the -dim/-mid "faint tint" naming above to

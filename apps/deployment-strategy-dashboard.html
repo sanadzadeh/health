@@ -5,33 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blockchain Settlement Deployment — Khaled Sanad</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="../assets/css/tokens.css">
 <style>
 :root {
-  --bg:#141414;
-  --surface:#1c1c1c;
-  --surface-alt:#222222;
-  --surface-hi:#282828;
-  --border:rgba(255,255,255,0.07);
-  --border-soft:rgba(255,255,255,0.04);
-  --ink:#f5f2ed;
-  --ink-2:rgba(245,242,237,0.55);
-  --ink-3:rgba(245,242,237,0.25);
-  --accent:#93a9b2;
-  --accent-dim:rgba(145,166,174,.12);
-  --accent-mid:rgba(145,166,174,.28);
-  --green:#72a287;
-  --green-dim:rgba(114,162,135,.13);
-  --amber:#b89a63;
-  --amber-dim:rgba(184,154,99,.13);
-  --red:#b36d64;
-  --red-dim:rgba(179,109,100,.13);
-  --blue:#7d97b2;
-  --blue-dim:rgba(125,151,178,.13);
-  --font-serif:'Cormorant Garamond', Georgia, serif;
-  --font-mono:'DM Mono', 'Courier New', monospace;
-  --radius:6px;
-  --tr:160ms ease;
+  --accent:var(--accent-deployment);
+  --accent-rgb:var(--accent-deployment-rgb);
+  --accent-dim:rgba(var(--accent-deployment-rgb), var(--accent-dim-opacity));
+  --accent-mid:rgba(var(--accent-deployment-rgb), var(--accent-mid-opacity));
+  --radius:6px; /* deliberate per-file override — every other page uses 4px */
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -50,7 +31,7 @@ body{
 }
 
 .site-header{
-  background:rgba(20,20,20,.92);
+  background:rgba(var(--bg-rgb),.92);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
   padding:14px 2rem;
@@ -557,7 +538,7 @@ footer{
 
 .mini-gantt-track{
   height:16px;
-  background:rgba(255,255,255,.045);
+  background:rgba(var(--border-rgb),.045);
   border-radius:2px;
   position:relative;
   overflow:hidden;
@@ -636,7 +617,7 @@ footer{
 }
 
 .gantt-table tr:hover td{
-  background:rgba(255,255,255,.025);
+  background:rgba(var(--border-rgb),.025);
 }
 
 .gantt-ws-label{
@@ -668,7 +649,7 @@ footer{
 .gantt-segment{
   height:7px;
   border-radius:1px;
-  background:rgba(255,255,255,.06);
+  background:rgba(var(--border-rgb),.06);
   position:relative;
 }
 

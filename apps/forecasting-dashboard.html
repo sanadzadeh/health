@@ -5,34 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forecasting Dashboard — Asterion Grid</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
 <style>
 :root{
-  --bg:#141414;
-  --surface:#1c1c1c;
-  --surface-alt:#222222;
-  --surface-hi:#282828;
   --surface-input:#2e2e2e;
-  --border:rgba(255,255,255,0.07);
-  --border-soft:rgba(255,255,255,0.04);
-  --ink:#f5f2ed;
-  --ink-2:rgba(245,242,237,0.66);
-  --ink-3:rgba(245,242,237,0.36);
-  --accent:#6b8fa8;
-  --accent-dim:rgba(107,143,168,0.11);
-  --accent-mid:rgba(107,143,168,0.25);
-  --green:#5f9a78;
-  --green-dim:rgba(95,154,120,0.12);
-  --amber:#c49a55;
-  --amber-dim:rgba(196,154,85,0.12);
-  --red:#b4685d;
-  --red-dim:rgba(180,104,93,0.12);
-  --purple:#8f7cae;
-  --purple-dim:rgba(143,124,174,0.12);
-  --font-serif:'Cormorant Garamond',Georgia,serif;
-  --font-mono:'DM Mono','Courier New',monospace;
-  --radius:4px;
-  --radius-sm:3px;
-  --tr:160ms ease;
+  --accent:var(--accent-forecasting);
+  --accent-rgb:var(--accent-forecasting-rgb);
+  --accent-dim:rgba(var(--accent-forecasting-rgb), var(--accent-dim-opacity));
+  --accent-mid:rgba(var(--accent-forecasting-rgb), var(--accent-mid-opacity));
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -321,7 +301,7 @@ body{
   border:none;
   cursor:pointer;
   text-decoration:underline;
-  text-decoration-color:rgba(245,242,237,0.18);
+  text-decoration-color:rgba(var(--ink-rgb),0.18);
   text-underline-offset:3px;
   padding:0;
   transition:color var(--tr);
@@ -614,7 +594,7 @@ input[type=range]::-moz-range-thumb{
 }
 .metric-box{
   border:1px solid var(--border-soft);
-  background:rgba(255,255,255,.018);
+  background:rgba(var(--border-rgb),.018);
   padding:.55rem .65rem;
 }
 .metric-label{
@@ -1344,11 +1324,11 @@ function drawSankey(onb, evg, ver, exc){
   html += ribbon(x2, excY, excH, x3, excY, excH, "#b4685d", 0.36);
 
   // Right-edge labels
-  html += `<text x="${x3+4}" y="${verY+4}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.45)">Verified</text>`;
-  html += `<text x="${x3+4}" y="${excY+4}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.45)">Exceptions</text>`;
+  html += `<text x="${x3+4}" y="${verY+4}" font-family="DM Mono" font-size="9" fill="rgba(var(--ink-rgb),0.45)">Verified</text>`;
+  html += `<text x="${x3+4}" y="${excY+4}" font-family="DM Mono" font-size="9" fill="rgba(var(--ink-rgb),0.45)">Exceptions</text>`;
   // Mid labels
-  html += `<text x="${x1+4}" y="${onbY - onbH - 5}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.32)">Onboarded</text>`;
-  html += `<text x="${x1+4}" y="${evgY + evgH + 12}" font-family="DM Mono" font-size="9" fill="rgba(245,242,237,0.32)">Not onboarded</text>`;
+  html += `<text x="${x1+4}" y="${onbY - onbH - 5}" font-family="DM Mono" font-size="9" fill="rgba(var(--ink-rgb),0.32)">Onboarded</text>`;
+  html += `<text x="${x1+4}" y="${evgY + evgH + 12}" font-family="DM Mono" font-size="9" fill="rgba(var(--ink-rgb),0.32)">Not onboarded</text>`;
 
   svg.innerHTML = html;
 }
